@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // ** IMPORTANT: Replace this with your actual Google Form URL **
       // The URL must end in '/formResponse'.
-      const formActionUrl = 'YOUR_GOOGLE_FORM_ACTION_URL_HERE';
+      const formActionUrl = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdurPCDKHWht9oUhYaV_xhrHGhv8uvz-T0bvmzrKKaymglbJw/formResponse';
       
       // We gather the data from the form fields.
       const formData = new FormData(contactForm);

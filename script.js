@@ -69,9 +69,8 @@ document.addEventListener('DOMContentLoaded', () => {
       // which would be to navigate to a new page.
       e.preventDefault();
 
-      // ** IMPORTANT: Replace this with your actual Google Form URL **
-      // The URL must end in '/formResponse'.
-      const formActionUrl = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSdurPCDKHWht9oUhYaV_xhrHGhv8uvz-T0bvmzrKKaymglbJw/formResponse';
+      // The updated Google Form URL ending in /formResponse.
+      const formActionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSdurPCDKHWht9oUhYaV_xhrHGhv8uvz-T0bvmzrKKaymglbJw/formResponse';
       
       // We gather the data from the form fields.
       const formData = new FormData(contactForm);

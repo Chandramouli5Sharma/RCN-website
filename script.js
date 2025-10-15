@@ -5,6 +5,7 @@
  * 1. Toggling the mobile navigation menu.
  * 2. Applying fade-in animations to sections as they are scrolled into view.
  * 3. Submitting the contact form data to a Google Form endpoint.
+ * 4. Handling the event registration button.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -102,5 +103,20 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+  
+  // ===================================================================
+  // 4. Event Registration Button Handler
+  // ===================================================================
+  // This adds an event listener to the "Register Now" button.
+  // While it's a direct link, this allows for future functionality like analytics.
+  const registerButton = document.querySelector('a[href^="https://docs.google.com/forms"]');
+  
+  if (registerButton) {
+    registerButton.addEventListener('click', () => {
+      console.log('User clicked on the registration link.');
+      // The default behavior (opening the link in a new tab) will continue.
+    });
+  }
 });
 
+// End of script.js

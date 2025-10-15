@@ -51,7 +51,7 @@
       <a href="#" class="flex items-center gap-3">
         <!-- A light circular background to highlight the logo. -->
         <div class="bg-slate-200 rounded-full p-1">
-          <img src="robo.png" alt="Robotics Club Nitte Logo" class="h-12 w-auto">
+          <img src="Images/robo.png" alt="Robotics Club Nitte Logo" class="h-12 w-auto">
         </div>
         <span class="text-xl font-bold text-white hidden sm:block">Robotics Club Nitte</span>
       </a>
@@ -93,7 +93,7 @@
  <!-- =================================================================== -->
     <!-- Hero Section                                                        -->
     <!-- =================================================================== -->
-    <section class="relative bg-slate-900 bg-cover bg-center min-h-[60vh] flex items-center justify-center px-6" style="background-image: url('https://images.unsplash.com/photo-1555066931-4365d1469c58?auto=format&fit=crop&w=1470&q=80');">
+    <section class="relative bg-slate-900 bg-cover bg-center min-h-[60vh] flex items-center justify-center px-6" style="background-image: url('https://images.unsplash.com/photo-1555066h31-4365d1469c58?auto=format&fit=crop&w=1470&q=80');">
       <div class="absolute inset-0 bg-black/70"></div> <!-- Dark overlay for text readability -->
       <div class="relative bg-black/50 p-8 rounded-lg max-w-4xl text-center">       
         <h1 class="text-5xl md:text-6xl font-extrabold mb-4" style="color: var(--color-accent);">
@@ -102,7 +102,7 @@
         <p class="text-xl md:text-2xl font-semibold tracking-wide text-white">
           Innovate. Build. Inspire.
         </p>
-         <img src="rcn.jpg" alt="Robotics Club Nitte " height="=300px" width="600px">
+         <img src="Images/rcn.jpg" alt="Robotics Club Nitte " height="=400px" width="600px">
       </div>
     </section>
 
@@ -148,21 +148,24 @@
             <!-- Cards are duplicated to create a seamless loop -->
             <script>
               const bearers = [
-                { name: 'Aditya Rao', position: 'President', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Aditya%20Rao' },
-                { name: 'Priya Singh', position: 'Vice President', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Priya%20Singh' },
-                { name: 'Rohan Sharma', position: 'Secretary', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Rohan%20Sharma' },
-                { name: 'Ananya Gupta', position: 'Treasurer', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Ananya%20Gupta' },
-                { name: 'Vikram Kumar', position: 'Technical Head', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Vikram%20Kumar' },
-                { name: 'Sneha Reddy', position: 'Events Coordinator', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Sneha%20Reddy' },
-                { name: 'Arjun Desai', position: 'PR Head', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Arjun%20Desai' },
-                { name: 'Kavya Nair', position: 'Content Lead', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Kavya%20Nair' },
-                { name: 'Mohit Agarwal', position: 'Logistics Head', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Mohit%20Agarwal' },
-                { name: 'Tanvi Joshi', position: 'Creative Head', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Tanvi%20Joshi' },
-                { name: 'Siddharth Menon', position: 'Senior Member', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Siddharth%20Menon' },
-                { name: 'Neha Patil', position: 'Senior Member', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Neha%20Patil' },
-                { name: 'Raj Verma', position: 'Senior Member', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Raj%20Verma' },
-                { name: 'Isha Shah', position: 'Senior Member', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Isha%20Shah' },
-                { name: 'Alok Nath', position: 'Senior Member', image: 'https://api.dicebear.com/8.x/initials/svg?seed=Alok%20Nath' },
+                { name: 'Vaibhav A Kulal', position: 'President' },
+                { name: 'Sanket Narale', position: 'Vice President' },
+                { name: 'Abhay Kiran M', position: 'Captain' },
+                { name: 'Nagendra S Hegde', position: 'Vice-captain' },
+                { name: 'Mitaash Vikasith', position: 'Secretary' },
+                { name: 'Shreyas Suvarna V', position: 'Joint Secretary' },
+                { name: 'Sharan Rai K', position: 'Treasurer' },
+                { name: 'Suhan Mohan Puthran', position: 'R&D Head' },
+                { name: 'Savin Suresha Almeida', position: 'R&D Co-head' },
+                { name: 'Sheikh Aizaz', position: 'Workshop Lead' },
+                { name: 'P Nikhil Pai', position: 'Workshop Lead' },
+                { name: 'Arham Yusuf Shiekh', position: 'Inventory & Maintenance' },
+                { name: 'Aaron Felix Fernandes', position: 'Maintenance Head' },
+                { name: 'Pranav S Salian', position: 'Website Development Lead' },
+                { name: 'Chandramouli Sharma', position: 'Website Development Lead' },
+                { name: 'Deekshith AT', position: 'Social Media Lead' },
+                { name: 'Y Ayush', position: 'Social Media Co-head' },
+                { name: 'Sameeksha D', position: 'Social Media Co-head' }
               ];
               
               // Duplicate bearers for infinite scroll effect
@@ -171,7 +174,7 @@
               allBearers.forEach(bearer => {
                 document.write(`
                   <div class="flex-shrink-0 w-64 bg-slate-800 rounded-lg shadow-lg p-6 text-center">
-                    <img class="w-24 h-24 rounded-full mx-auto mb-4 object-cover bg-slate-700" src="${bearer.image}" alt="${bearer.name}">
+                    <img class="w-24 h-24 rounded-full mx-auto mb-4 object-cover bg-slate-700" src="https://api.dicebear.com/8.x/initials/svg?seed=${bearer.name.replace(/ /g, '%20')}" alt="${bearer.name}">
                     <div>
                       <h3 class="text-xl font-semibold text-white">${bearer.name}</h3>
                       <p class="text-orange-400">${bearer.position}</p>
@@ -198,7 +201,7 @@
           <article class="border-2 border-teal-500 rounded-lg p-6 shadow hover:shadow-lg transition-shadow duration-300">
             <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-accent);">Combat Robotics</h3>
             <div class="h-48 mb-4 overflow-hidden rounded-md">
-              <img src="warbots.png" alt="Combat Robot" class="w-full h-full object-cover">
+              <img src="Images/warbots.png" alt="Combat Robot" class="w-full h-full object-cover">
             </div>
             <p>
               Our combat robotics division is involved in building various bots like Race bots, Soccer bots, sumo bots and War bots. We focus on design, testing, fabrication, and control.
@@ -208,7 +211,7 @@
           <article class="border-2 border-teal-500 rounded-lg p-6 shadow hover:shadow-lg transition-shadow duration-300">
             <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-accent);">Soft Robotics</h3>
             <div class="h-48 mb-4 overflow-hidden rounded-md">
-              <img src="iot.png" alt="IoT Project" class="w-full h-full object-cover">
+              <img src="Images/iot.png" alt="IoT Project" class="w-full h-full object-cover">
             </div>
             <p>
               We explore the field of soft robotics by designing, creating, testing, and implementing line followers, maze solvers, and various IoT hobby projects.
@@ -218,7 +221,7 @@
           <article class="border-2 border-teal-500 rounded-lg p-6 shadow hover:shadow-lg transition-shadow duration-300">
             <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-accent);">Aero Division</h3>
             <div class="h-48 mb-4 overflow-hidden rounded-md">
-              <img src="pcb design.png" alt="PCB Design for Aero Division" class="w-full h-full object-cover">
+              <img src="Images/pcb design.png" alt="PCB Design for Aero Division" class="w-full h-full object-cover">
             </div>
             <p>
               Our Aero division involves the design, fabrication, and implementation of drones and rockets.
@@ -275,9 +278,11 @@
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div class="bg-slate-100 border-l-4 border-orange-500 p-6 rounded-r-lg">
+              <img src="Achimg/technoxian_2023.jpg" alt="Technoxian World Cup 2023" class="w-full rounded-lg shadow-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Technoxian+2023';">
               <p class="text-lg">Team secured the 2nd runners-up position in the prestigious <q>Technoxian World Cup 2023</q>, competing in the Under 15kg Robowars category.</p>
           </div>
           <div class="bg-slate-100 border-l-4 border-orange-500 p-6 rounded-r-lg">
+              <img src="Achimg/techfest_2022.jpg" alt="Tech Fest IIT Bombay 2022" class="w-full rounded-lg shadow-md mb-4" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/1e293b?text=Tech+Fest+2022';">
               <p class="text-lg">Participated in International Robowars held at Tech Fest, IIT Bombay in 2022.</p>
           </div>
         </div>
@@ -304,19 +309,19 @@
           <!-- Each input's 'name' attribute has been updated with the correct entry.ID -->
           <div>
             <label for="name" class="block mb-2 font-semibold">Name</label>
-            <input type="text" id="name" name="entry.1235737159" required class="w-full rounded-md border border-gray-600 bg-slate-800 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Your full name" autocomplete="name">
+            <input type="text" id="name" name="entry.598613753" required class="w-full rounded-md border border-gray-600 bg-slate-800 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Your full name" autocomplete="name">
           </div>
           <div>
             <label for="email" class="block mb-2 font-semibold">Email</label>
-            <input type="email" id="email" name="entry.345166136" required class="w-full rounded-md border border-gray-600 bg-slate-800 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="you@example.com" autocomplete="email">
+            <input type="email" id="email" name="entry.1467904197" required class="w-full rounded-md border border-gray-600 bg-slate-800 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="you@example.com" autocomplete="email">
           </div>
           <div>
             <label for="subject" class="block mb-2 font-semibold">Subject</label>
-            <input type="text" id="subject" name="entry.1740633209" required class="w-full rounded-md border border-gray-600 bg-slate-800 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Subject of your message">
+            <input type="text" id="subject" name="entry.1740242680" required class="w-full rounded-md border border-gray-600 bg-slate-800 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500" placeholder="Subject of your message">
           </div>
           <div>
             <label for="message" class="block mb-2 font-semibold">Message</label>
-            <textarea id="message" name="entry.1480570627" rows="5" required class="w-full rounded-md border border-gray-600 bg-slate-800 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 resize-y" placeholder="Write your message here..."></textarea>
+            <textarea id="message" name="entry.479067333" rows="5" required class="w-full rounded-md border border-gray-600 bg-slate-800 px-4 py-3 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-orange-500 resize-y" placeholder="Write your message here..."></textarea>
           </div>
           <button type="submit" class="bg-orange-500 hover:bg-red-500 text-white font-semibold px-6 py-3 rounded-full transition-colors duration-300 focus:outline-none focus:ring-4 focus:ring-orange-400">
             Send Message
@@ -343,7 +348,7 @@
                     <stop offset="100%" stop-color="#fcb045"></stop>
                   </linearGradient>
                 </defs>
-                <path fill="url(#insta-gradient)" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.455.718-2.126 1.388C1.344 2.69 1.03 3.35 1.03 4.135c-.3.765-.5 1.635-.56 2.913-.06 1.28-.07 1.687-.07 4.947s.015 3.667.072 4.947c.06 1.278.26 2.15.56 2.913.305.785.72 1.455 1.39 2.126.67.67 1.34.965 2.125 1.27.765.3 1.635.5 2.913.56 1.28.056 1.687.07 4.947.07s3.667-.015 4.947-.072c1.278-.06 2.15-.26 2.913-.56.785-.305 1.455-.72 2.126-1.39.67-.67.965-1.34 1.27-2.125.3-.765.5-1.635.56-2.913.06-1.28.07-1.687.07-4.947s-.015-3.667-.072-4.947c-.06-1.278-.26-2.15-.56-2.913-.305-.785-.72-1.455-1.39-2.126C21.31 1.344 20.65 1.03 19.865 1.03c-.765-.3-1.635-.5-2.913-.56C15.667.015 15.26 0 12 0zm0 2.16c3.2 0 3.585.01 4.85.07 1.17.05 1.8.22 2.22.42.5.24.87.52 1.25.9.38.38.67.75.9 1.25.2.42.37 1.05.42 2.22.06 1.265.07 1.65.07 4.85s-.01 3.585-.07 4.85c-.05 1.17-.22 1.8-.42 2.22-.24.5-.52.87-.9 1.25-.38.38-.75.67-1.25.9-.42.2-1.05.37-2.22.42-1.265.06-1.65.07-4.85.07s-3.585-.01-4.85-.07c-1.17-.05-1.8-.22-2.22-.42-.5-.24-.87-.52-1.25-.9-.38-.38-.67-.75-.9-1.25-.2-.42-.37-1.05-.42-2.22C2.17 15.585 2.16 15.2 2.16 12s.01-3.585.07-4.85c.05-1.17.22-1.8.42-2.22.24-.5.52-.87.9-1.25.38-.38.75-.67 1.25-.9.42-.2 1.05-.37 2.22-.42C8.415 2.17 8.8 2.16 12 2.16zm0 3.14A6.7 6.7 0 1012 18.7a6.7 6.7 0 000-13.4zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
+                <path fill="url(#insta-gradient)" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.455.718-2.126 1.388C1.344 2.69 1.03 3.35 1.03 4.135c-.3.765-.5 1.635-.56 2.913-.06 1.28-.07 1.687-.07 4.947s.015 3.667.072 4.947c.06 1.278.26 2.15.56 2.913.305.785.72 1.455 1.39 2.126.67.67 1.34.965 2.125 1.27.765.3 1.635.5 2.913.56 1.28.056 1.687.07 4.947.07s3.667-.015 4.947-.072c1.278-.06 2.15-.26 2.913-.56.785-.305 1.455-.72 2.126-1.39.67-.67.965-1.34 1.27-2.125.3-.765.5-1.635.56-2.913.06-1.28.07-1.687.07-4.947s-.015-3.667-.072-4.947c-.06-1.278-.26-2.15-.56-2.913-.305-.785-.72-1.455-1.39-2.126C21.31 1.344 20.65 1.03 19.865 1.03c-.765-.3-1.635-.5-2.913-.56C15.667.015 15.26 0 12 0zm0 2.16c3.2 0 3.585.01 4.85.07 1.17.05 1.8.22 2.22.42.5.24.87.52 1.25.9.38.38.67.75.9 1.25.2.42.37 1.05.42 2.22.06 1.265.07 1.65.07 4.85s-.01 3.585-.07 4.85c-.05 1.17-.22 1.8-.42 2.22-.24.5-.52.87-.9 1.25-.38.38-.75.67-1.25.9-.42.2-1.05.37-2.22.42-1.265.06-1.65.07-4.85.07s-3.585-.01-4.85-.07c-1.17-.05-1.8-.22-2.22-.42-.5-.24-.87-.52-1.25-.9-.38-.38-.67-.75-.9-1.25-.2-.42-.37-1.05-.42-2.22C2.17 15.585 2.16 15.2 2.16 12s.01-3.585.07-4.85c.05-1.17.22-1.8.42-2.22.24-.5.52-.87.9-1.25.38.38.75-.67 1.25-.9.42-.2 1.05.37 2.22-.42C8.415 2.17 8.8 2.16 12 2.16zm0 3.14A6.7 6.7 0 1012 18.7a6.7 6.7 0 000-13.4zM12 16a4 4 0 110-8 4 4 0 010 8zm6.4-11.8a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path>
               </svg>
             </a>
             <!-- LinkedIn Logo -->
@@ -378,7 +383,4 @@
 
 </body>
 </html>
-
-
-
 

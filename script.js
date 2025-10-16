@@ -119,4 +119,3 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// End of script.js

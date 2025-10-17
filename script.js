@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       // The updated Google Form URL ending in /formResponse.
-      const formActionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScKugaj4_SHH_D50GcDZVUcjKH8cHlY361ilBXDmly6pA6ANQ/formResponse';
+      const formActionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLScabZFfwyByU9nKtabVQaFgp9rRGQwg9U5vRTvpwEkUZ6sqkw/formResponse';
       
       // We gather the data from the form fields.
       const formData = new FormData(contactForm);

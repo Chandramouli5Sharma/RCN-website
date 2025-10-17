@@ -24,8 +24,8 @@
       display: flex;
       gap: 1.5rem; /* Space between cards */
       width: max-content;
-      /* Animation speed adjusted for 15 cards */
-      animation: scroll 60s linear infinite;
+      /* Animation speed adjusted for 18 cards */
+      animation: scroll 72s linear infinite;
     }
     .scroller:hover .scroller__inner {
       animation-play-state: paused;
@@ -93,7 +93,7 @@
  <!-- =================================================================== -->
     <!-- Hero Section                                                        -->
     <!-- =================================================================== -->
-    <section class="relative bg-slate-900 bg-cover bg-center min-h-[60vh] flex items-center justify-center px-6" style="background-image: url('https://images.unsplash.com/photo-1555066h31-4365d1469c58?auto=format&fit=crop&w=1470&q=80');">
+    <section class="relative bg-slate-900 bg-cover bg-center min-h-[60vh] flex items-center justify-center px-6" style="background-image: url('Images/hero.jpg');">
       <div class="absolute inset-0 bg-black/70"></div> <!-- Dark overlay for text readability -->
       <div class="relative bg-black/50 p-8 rounded-lg max-w-4xl text-center">       
         <h1 class="text-5xl md:text-6xl font-extrabold mb-4" style="color: var(--color-accent);">
@@ -147,24 +147,24 @@
             <!-- Cards are duplicated to create a seamless loop -->
             <script>
               const bearers = [
-                { name: 'Vaibhav A Kulal', position: 'President' },
-                { name: 'Sanket Narale', position: 'Vice President' },
-                { name: 'Abhay Kiran M', position: 'Captain' },
-                { name: 'Nagendra S Hegde', position: 'Vice-captain' },
-                { name: 'Mitaash Vikasith', position: 'Secretary' },
-                { name: 'Shreyas Suvarna V', position: 'Joint Secretary' },
-                { name: 'Sharan Rai K', position: 'Treasurer' },
-                { name: 'Suhan Mohan Puthran', position: 'R&D Head' },
-                { name: 'Savin Suresha Almeida', position: 'R&D Co-head' },
-                { name: 'Sheikh Aizaz', position: 'Workshop Lead' },
-                { name: 'P Nikhil Pai', position: 'Workshop Lead' },
-                { name: 'Arham Yusuf Shiekh', position: 'Inventory & Maintenance' },
-                { name: 'Aaron Felix Fernandes', position: 'Maintenance Head' },
-                { name: 'Pranav S Salian', position: 'Website Development Lead' },
-                { name: 'Chandramouli Sharma', position: 'Website Development Lead' },
-                { name: 'Deekshith AT', position: 'Social Media Lead' },
-                { name: 'Y Ayush', position: 'Social Media Co-head' },
-                { name: 'Sameeksha D', position: 'Social Media Co-head' }
+                { name: 'Vaibhav A Kulal', position: 'President', img: 'Vaibhav A Kulal.jpg' },
+                { name: 'Sanket Narale', position: 'Vice President', img: 'Sanket Narale.jpg' },
+                { name: 'Abhay Kiran M', position: 'Captain', img: 'Abhay Kiran M.jpg' },
+                { name: 'Nagendra S Hegde', position: 'Vice-captain', img: 'Nagendra.jpg' },
+                { name: 'Mitaash Vikasith', position: 'Secretary', img: 'Mitaash Vikasith.jpg' },
+                { name: 'Shreyas Suvarna V', position: 'Joint Secretary', img: 'Shreyas Suvarna V.jpg' },
+                { name: 'Sharan Rai K', position: 'Treasurer', img: 'Sharan Rai K.jpg' },
+                { name: 'Suhan Mohan Puthran', position: 'R&D Head', img: 'Suhan Mohan Puthran.jpg' },
+                { name: 'Savin Suresha Almeida', position: 'R&D Co-head', img: 'Savin Suresha Almeida.jpg' },
+                { name: 'Sheikh Aizaz', position: 'Workshop Lead', img: 'Sheikh Aizaz.jpg' },
+                { name: 'P Nikhil Pai', position: 'Workshop Lead', img: 'P Nikhil Pai.jpg' },
+                { name: 'Arham Yusuf Shiekh', position: 'Inventory & Maintenance', img: 'Arham Yusuf Shiekh.jpg' },
+                { name: 'Aaron Felix Fernandes', position: 'Maintenance Head', img: 'Aaron Felix Fernandes.jpg' },
+                { name: 'Pranav S Salian', position: 'Website Development Lead', img: 'Pranav S Salian.jpg' },
+                { name: 'Chandramouli Sharma', position: 'Website Development Lead', img: 'Chandramouli Sharma.jpg' },
+                { name: 'Deekshith AT', position: 'Social Media Lead', img: 'Deekshith AT.jpg' },
+                { name: 'Y Ayush', position: 'Social Media Co-head', img: 'Y Ayush.jpg' },
+                { name: 'Sameeksha D', position: 'Social Media Co-head', img: 'Sameeksha D.jpg' }
               ];
               
               // Duplicate bearers for infinite scroll effect
@@ -173,7 +173,12 @@
               allBearers.forEach(bearer => {
                 document.write(`
                   <div class="flex-shrink-0 w-64 bg-slate-800 rounded-lg shadow-lg p-6 text-center">
-                    <img class="w-24 h-24 rounded-full mx-auto mb-4 object-cover bg-slate-700" src="https://api.dicebear.com/8.x/initials/svg?seed=${bearer.name.replace(/ /g, '%20')}" alt="${bearer.name}">
+                    <div class="w-24 h-24 rounded-full mx-auto mb-4 bg-slate-700 flex items-center justify-center text-slate-300 text-3xl font-bold overflow-hidden">
+                      <img class="w-full h-full object-cover" 
+                           src="Officeb/${bearer.img}" 
+                           alt="${bearer.name}"
+                           onerror="this.style.display='none'; this.parentElement.innerHTML = '${bearer.name.split(' ').map(n=>n[0]).join('')}'">
+                    </div>
                     <div>
                       <h3 class="text-xl font-semibold text-white">${bearer.name}</h3>
                       <p class="text-orange-400">${bearer.position}</p>
@@ -210,7 +215,7 @@
           <article class="border-2 border-teal-500 rounded-lg p-6 shadow hover:shadow-lg transition-shadow duration-300">
             <h3 class="text-2xl font-semibold mb-3" style="color: var(--color-accent);">Soft Robotics</h3>
             <div class="h-48 mb-4 overflow-hidden rounded-md">
-              <img src="Images/iot.png" alt="IoT Project" class="w-full h-full object-cover">
+              <img src="Images/softrobo.jpg" alt="Soft Robotics Project" class="w-full h-full object-cover">
             </div>
             <p>
               We explore the field of soft robotics by designing, creating, testing, and implementing line followers, maze solvers, and various IoT hobby projects.
@@ -391,4 +396,7 @@
 
 </body>
 </html>
+
+
+
 

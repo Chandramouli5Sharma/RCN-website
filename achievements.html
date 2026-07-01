@@ -54,7 +54,7 @@
     /* Image card (has photo) */
     .ach-img-card {
       display: grid;
-      grid-template-columns: 200px 1fr;
+      grid-template-columns: 280px 1fr;
       background: #110e1f;
       border: 1px solid rgba(255,255,255,0.07);
       border-radius: 16px;
@@ -66,7 +66,7 @@
       box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(249,115,22,0.2);
     }
     .ach-img-card img {
-      width: 100%; height: 100%; object-fit: cover;
+      width: 100%; height: 100%; min-height: 260px; object-fit: cover; display: block;
     }
     .ach-img-card .body { padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
 
@@ -87,7 +87,7 @@
 
     @media (max-width: 600px) {
       .ach-img-card { grid-template-columns: 1fr; }
-      .ach-img-card img { height: 180px; }
+      .ach-img-card img { height: 240px; min-height: 240px; }
     }
   </style>
 </head>
@@ -134,9 +134,6 @@
     <a href="index.html#divisions" class="side-link" onclick="closeSidebar()"><span class="side-icon"><svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></span>Divisions</a>
     <a href="achievements.html"    class="side-link"><span class="side-icon"><svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></span>Achievements</a>
     <a href="index.html#contact"   class="side-link" onclick="closeSidebar()"><span class="side-icon"><svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>Contact Us</a>
-    <div style="height:1px;background:linear-gradient(90deg,rgba(59,130,246,0.2),rgba(124,58,237,0.1),transparent);margin:14px 8px;"></div>
-    <p style="font-size:0.58rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(200,195,232,0.3);padding:0 8px;margin:0 0 8px;">Members</p>
-    <a href="member-login.html" class="side-link" style="background:rgba(59,130,246,0.08);border:1px solid rgba(59,130,246,0.18);color:#60a5fa;"><span class="side-icon" style="background:rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.3);color:#3b82f6;"><svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></span>Member Login</a>
   </div>
   <div style="padding:14px 24px;border-top:1px solid rgba(255,255,255,0.07);">
     <p style="font-size:0.7rem;color:rgba(200,195,232,0.3);margin:0;">NMAM Institute of Technology, Nitte</p>
@@ -195,7 +192,7 @@
 
       <!-- Aakar 2026 — IMAGE CARD -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2026/Aj_aakar.jpeg" alt="Aakar 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Aakar+2026'">
+        <img src="Achivements2026/Aj_aakar.jpeg" alt="Aakar 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Aakar+2026'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Apr 24–25, 2026 · AJ Institute of Technology</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Aakar 2026</h2>
@@ -205,7 +202,7 @@
 
       <!-- Sentia 2026 — IMAGE CARD -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2026/Sentia26.jpeg" alt="Sentia 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Sentia+2026'">
+        <img src="Achivements2026/Sentia26.jpeg" alt="Sentia 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Sentia+2026'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Mar 23, 2026 · MITE, Mangalore</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Sentia 2026</h2>
@@ -215,11 +212,11 @@
 
       <!-- Aakrti 2026 — IMAGE CARD -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2026/Aakrti26.jpeg" alt="Aakrti 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Aakrti+2026'">
+        <img src="Achivements2026/Aakrti26.jpeg" alt="Aakrti 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Aakrti+2026'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Mar 14, 2026 · Canara Engineering College</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Aakrti 2026</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-bronze">🥉 Line Follower Robot</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-bronze">🥉 Line Follower</span></div>
         </div>
       </div>
 
@@ -227,16 +224,16 @@
       <div class="ach-entry ach-text-card">
         <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 5–8, 2026 · NMAMIT</p>
         <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.25rem;color:#fff;margin-bottom:8px;">Incridea 2026</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-silver">🥈 Line Follower Robot</span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-silver">🥈 Line Follower</span></div>
       </div>
 
       <!-- Fastbit 2026 — IMAGE CARD -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2026/Fastbit_26.jpeg" alt="Fastbit Embedded Systems 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Fastbit+2026'">
+        <img src="Achivements2026/Fastbit_26.jpeg" alt="Fastbit Embedded Systems 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Fastbit+2026'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 26, 2026 · Udupi</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Fastbit Embedded Systems 2026</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 PCB Design</span></div>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 PCB Design</span><span class="medal medal-silver">🥈 Robo Soccer</span></div>
         </div>
       </div>
 
@@ -248,7 +245,7 @@
 
       <!-- Sambhram 2025 — IMAGE CARD -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Sambhram25.jpeg" alt="Sambhram 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+2025'">
+        <img src="Achivements2025/Sambhram25.jpeg" alt="Sambhram 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+2025'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Dec 3–4, 2025 · SDIT, Mangalore</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Sambhram-2025</h2>
@@ -258,7 +255,7 @@
 
       <!-- Tiara 2025 — IMAGE CARD -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Tiara2025.jpg" alt="Tiara 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Tiara+2025'">
+        <img src="Achivements2025/Tiara2025.jpg" alt="Tiara 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Tiara+2025'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Nov 13–14, 2025 · SJEC, Mangalore</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Tiara-2025</h2>
@@ -268,7 +265,7 @@
 
       <!-- Yensplash 2025 — IMAGE CARD -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Yensplash2025.jpg" alt="Yensplash 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Yensplash+2025'">
+        <img src="Achivements2025/Yensplash2025.jpg" alt="Yensplash 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Yensplash+2025'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Nov 11–12, 2025 · YIT, Moodbidre</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Yensplash-2025</h2>
@@ -278,7 +275,7 @@
 
       <!-- Synergia 2025 — IMAGE CARD -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Synergia2025.jpg" alt="Synergia 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Synergia+2025'">
+        <img src="Achivements2025/Synergia2025.jpg" alt="Synergia 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Synergia+2025'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Nov 6–8, 2025 · Sahyadri, Mangalore</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Synergia-2025</h2>
@@ -293,7 +290,7 @@
       <!-- TECHTATVA 2025 — IMAGE CARD (featured) -->
       <div class="ach-entry" style="background:#110e1f;border:1px solid rgba(255,255,255,0.07);border-radius:16px;overflow:hidden;transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(124,58,237,0.3)'" onmouseout="this.style.boxShadow='none'">
         <div style="overflow:hidden;max-height:300px;">
-          <img src="Achimg-2025/Techtatva25.JPG" alt="TECHTATVA 2025" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null;this.src='https://placehold.co/900x400/110e1f/7c3aed?text=Techtatva+2025'">
+          <img src="Achivements2025/Techtatva25.JPG" alt="TECHTATVA 2025" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null;this.src='https://placehold.co/900x400/110e1f/7c3aed?text=Techtatva+2025'">
         </div>
         <div style="padding:28px 32px;">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7c3aed;margin-bottom:6px;">Oct 8–11, 2025 · MIT, Manipal</p>
@@ -310,7 +307,7 @@
 
       <!-- ENGINEER 2025 — IMAGE CARD -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Engineer2025.jpg" alt="ENGINEER 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Engineer+2025'">
+        <img src="Achivements2025/Engineer2025.jpg" alt="ENGINEER 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Engineer+2025'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Sep 28, 2025 · NITK, Suratkal</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">ENGINEER 2025</h2>
@@ -355,7 +352,7 @@
 
       <!-- Sambhram 2024 — image -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Sambhram24.jpeg" alt="Sambhram 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+2024'">
+        <img src="Achivements2025/Sambhram24.jpeg" alt="Sambhram 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+2024'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Dec 6–7, 2024 · SDIT, Mangalore</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Sambhram 2024</h2>
@@ -388,7 +385,7 @@
 
       <!-- Quantum 2024 — image -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Quantum2024.jpg" alt="QUANTUM 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Quantum+2024'">
+        <img src="Achivements2025/Quantum2024.jpg" alt="QUANTUM 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Quantum+2024'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 23–25, 2024 · NHCE, Bangalore</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">QUANTUM'24</h2>
@@ -398,7 +395,7 @@
 
       <!-- Technovanza 2024 — image -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Technovanza2024.jpg" alt="TECHNOVANZA 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Technovanza+2024'">
+        <img src="Achivements2025/Technovanza2024.jpg" alt="TECHNOVANZA 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Technovanza+2024'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 12–14, 2024 · VJTI, Mumbai</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">TECHNOVANZA'24</h2>
@@ -408,7 +405,7 @@
 
       <!-- SAMBHRAM'24 — image -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Sambhram2024.jpg" alt="SAMBHRAM 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+Jan+2024'">
+        <img src="Achivements2025/Sambhram2024.jpg" alt="SAMBHRAM 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+Jan+2024'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 6–7, 2024 · Sree Devi</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">SAMBHRAM'24</h2>
@@ -429,7 +426,7 @@
 
       <!-- Aerophilia, TECHTATVA, ENGINEER each get image cards -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Aerophilia2023.jpg" alt="AEROPHILIA 2023" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Aerophilia+2023'">
+        <img src="Achivements2025/Aerophilia2023.jpg" alt="AEROPHILIA 2023" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Aerophilia+2023'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Dec 8–9, 2023 · Sahyadri</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">AEROPHILIA'23</h2>
@@ -439,7 +436,7 @@
 
       <!-- Technoxian 2023 — IMAGE CARD -->
       <div class="ach-entry ach-img-card">
-        <img src="Achimg-2025/Technoxian2023.jpg" alt="Technoxian 2023" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Technoxian+2023'">
+        <img src="Achivements2025/Technoxian2023.jpg" alt="Technoxian 2023" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Technoxian+2023'">
         <div class="body">
           <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jul 25–27, 2023 · National</p>
           <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Technoxian World Cup 2023</h2>

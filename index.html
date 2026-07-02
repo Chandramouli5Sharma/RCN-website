@@ -18,9 +18,9 @@
 </head>
 <body style="background-color:#0a0812; color:#c8c3e8; font-family:'Source Sans 3','Inter',sans-serif;">
 <!-- ══ STICKY TOPBAR ══ -->
-<div id="topbar" style="position:fixed;top:0;left:0;right:0;z-index:300;height:64px;background:rgba(10,8,18,0.95);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;padding:0 16px;">
+<div id="topbar" style="position:fixed;top:0;left:0;right:0;z-index:300;height:64px;background:rgba(10,8,18,0.95);backdrop-filter:blur(16px);border-bottom:1.5px solid rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:space-between;padding:0 16px;">
   <!-- Left: back button -->
-  <a id="back-btn" href="javascript:history.back()" aria-label="Go back" style="width:40px;height:40px;border-radius:10px;border:1px solid rgba(255,255,255,0.1);background:rgba(249,115,22,0.12);display:flex;align-items:center;justify-content:center;color:#f97316;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='rgba(249,115,22,0.25)'" onmouseout="this.style.background='rgba(249,115,22,0.12)'">
+  <a id="back-btn" href="javascript:history.back()" aria-label="Go back" style="width:40px;height:40px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.2);background:rgba(249,115,22,0.12);display:flex;align-items:center;justify-content:center;color:#f97316;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='rgba(249,115,22,0.25)'" onmouseout="this.style.background='rgba(249,115,22,0.12)'">
     <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M15 19l-7-7 7-7"/></svg>
   </a>
   <!-- Center: brand -->
@@ -38,8 +38,8 @@
 <div id="sidebar-backdrop" style="position:fixed;inset:0;z-index:310;background:rgba(0,0,0,0.6);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity 0.3s ease;"></div>
 
 <!-- ══ SIDE PANEL ══ -->
-<nav id="sidebar" style="position:fixed;top:0;left:0;height:100vh;width:280px;z-index:320;background:rgba(14,11,26,0.98);backdrop-filter:blur(24px);border-right:1px solid rgba(255,255,255,0.07);transform:translateX(-100%);transition:transform 0.35s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;overflow-y:auto;">
-  <div style="padding:20px 24px 16px;border-bottom:1px solid rgba(255,255,255,0.07);display:flex;align-items:center;justify-content:space-between;">
+<nav id="sidebar" style="position:fixed;top:0;left:0;height:100vh;width:280px;z-index:320;background:rgba(14,11,26,0.98);backdrop-filter:blur(24px);border-right:1.5px solid rgba(255,255,255,0.16);transform:translateX(-100%);transition:transform 0.35s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;overflow-y:auto;">
+  <div style="padding:20px 24px 16px;border-bottom:1.5px solid rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:space-between;">
     <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
       <div style="background:#e2e8f0;border-radius:50%;padding:3px;flex-shrink:0;">
         <img src="Images/robo.png" alt="Logo" style="height:36px;width:auto;">
@@ -49,7 +49,7 @@
         <p style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;line-height:1.2;color:#3b82f6;margin:0;">Nitte</p>
       </div>
     </a>
-    <button onclick="closeSidebar()" style="width:32px;height:32px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);background:transparent;cursor:pointer;color:rgba(200,195,232,0.5);display:flex;align-items:center;justify-content:center;" aria-label="Close">
+    <button onclick="closeSidebar()" style="width:32px;height:32px;border-radius:8px;border:1.5px solid rgba(255,255,255,0.2);background:transparent;cursor:pointer;color:rgba(200,195,232,0.5);display:flex;align-items:center;justify-content:center;" aria-label="Close">
       <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
     </button>
   </div>
@@ -60,7 +60,7 @@
     <a href="achievements.html"    class="side-link"><span class="side-icon"><svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></span>Achievements</a>
     <a href="index.html#contact"   class="side-link" onclick="closeSidebar()"><span class="side-icon"><svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>Contact Us</a>
   </div>
-  <div style="padding:14px 24px;border-top:1px solid rgba(255,255,255,0.07);">
+  <div style="padding:14px 24px;border-top:1.5px solid rgba(255,255,255,0.16);">
     <p style="font-size:0.7rem;color:rgba(200,195,232,0.3);margin:0;">NMAM Institute of Technology, Nitte</p>
   </div>
 </nav>
@@ -72,7 +72,7 @@
   .side-link:hover { background:rgba(249,115,22,0.08);color:#fff; }
   .side-link-resource { color:rgba(200,195,232,0.6); }
   .side-link-resource:hover { background:rgba(249,115,22,0.08);color:#fbbf24; }
-  .side-icon { width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:rgba(200,195,232,0.55);transition:background 0.2s,color 0.2s; }
+  .side-icon { width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.18);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:rgba(200,195,232,0.55);transition:background 0.2s,color 0.2s; }
   .side-link:hover .side-icon { background:rgba(249,115,22,0.15);color:#f97316;border-color:rgba(249,115,22,0.3); }
   .side-icon-resource { background:rgba(249,115,22,0.06);border-color:rgba(249,115,22,0.18);color:rgba(249,115,22,0.6); }
   .side-link-resource:hover .side-icon-resource { background:rgba(249,115,22,0.18);color:#f97316; }
@@ -135,7 +135,7 @@
 <!-- ══════════════════════════════════════════════
      ABOUT
 ══════════════════════════════════════════════ -->
-<section id="about" class="fade-in-section orb-bg" style="padding:56px 24px;">
+<section id="about" class="fade-in-section orb-bg section-orange" style="padding:56px 24px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
   <div style="max-width:720px;margin:0 auto;text-align:center;">
     <p class="section-eyebrow" style="font-size:0.78rem;letter-spacing:0.16em;">Who We Are</p>
     <h2 style="font-family:'Inter',sans-serif;font-size:clamp(2rem,4.5vw,3rem);font-weight:800;margin-bottom:20px;" class="grad-text-cyan">About Us</h2>
@@ -153,7 +153,7 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;max-width:960px;margin:0 auto 20px;">
       <!-- Card macro -->
       <!-- President -->
-      <div class="holo-card" style="padding:28px 20px;text-align:center;">
+      <div class="holo-card card-light-border" style="padding:28px 20px;text-align:center;">
         <div style="position:relative;display:inline-block;margin-bottom:16px;">
           <div class="avatar-ring" style="width:88px;height:88px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-family:'Inter',sans-serif;font-size:1.4rem;color:#c8c3e8;margin:0 auto;">
             <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Sanket_narale_.jpg" alt="Sanket Narale" onerror="this.style.display='none';this.parentElement.textContent='SN'">
@@ -165,7 +165,7 @@
         <p style="font-size:0.7rem;color:rgba(200,195,232,0.45);margin-top:10px;letter-spacing:0.06em;text-transform:uppercase;">Robotics & AI</p>
       </div>
       <!-- Secretary -->
-      <div class="holo-card" style="padding:28px 20px;text-align:center;">
+      <div class="holo-card card-light-border" style="padding:28px 20px;text-align:center;">
         <div style="position:relative;display:inline-block;margin-bottom:16px;">
           <div class="avatar-ring" style="width:88px;height:88px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-family:'Inter',sans-serif;font-size:1.4rem;color:#c8c3e8;margin:0 auto;">
             <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Aaron Felix Fernandes .jpg" alt="Aaron Felix Fernandes" onerror="this.style.display='none';this.parentElement.textContent='AF'">
@@ -176,7 +176,7 @@
         <p style="font-size:0.7rem;color:rgba(200,195,232,0.45);margin-top:10px;letter-spacing:0.06em;text-transform:uppercase;">Robotics & AI</p>
       </div>
       <!-- Captain -->
-      <div class="holo-card" style="padding:28px 20px;text-align:center;">
+      <div class="holo-card card-light-border" style="padding:28px 20px;text-align:center;">
         <div style="position:relative;display:inline-block;margin-bottom:16px;">
           <div class="avatar-ring" style="width:88px;height:88px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-family:'Inter',sans-serif;font-size:1.4rem;color:#c8c3e8;margin:0 auto;">
             <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Shreyas.JPG" alt="Shreyas Suvarna V" onerror="this.style.display='none';this.parentElement.textContent='SS'">
@@ -187,7 +187,7 @@
         <p style="font-size:0.7rem;color:rgba(200,195,232,0.45);margin-top:10px;letter-spacing:0.06em;text-transform:uppercase;">Electronics & Comm.</p>
       </div>
       <!-- Treasurer -->
-      <div class="holo-card" style="padding:28px 20px;text-align:center;">
+      <div class="holo-card card-light-border" style="padding:28px 20px;text-align:center;">
         <div style="position:relative;display:inline-block;margin-bottom:16px;">
           <div class="avatar-ring" style="width:88px;height:88px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-family:'Inter',sans-serif;font-size:1.4rem;color:#c8c3e8;margin:0 auto;">
             <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Sharan Rai K.jpg" alt="Sharan Rai K" onerror="this.style.display='none';this.parentElement.textContent='SR'">
@@ -206,12 +206,12 @@
       <div class="iris-divider" style="flex:1;"></div>
     </div>
 
-    <!-- ROW 2 & 3: Two equal rows of 5 -->
-    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:1100px;margin:0 auto;">
+    <!-- ROW 2,3 & 4: Three rows of 3, last one centered -->
+    <div class="leads-grid" style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;max-width:960px;margin:0 auto;">
 
       <!-- Compact card template: smaller avatar, horizontal feel -->
       <!-- Vice President -->
-      <div class="holo-card" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+      <div class="holo-card card-light-border" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
         <div class="avatar-ring" style="width:64px;height:64px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-size:1rem;color:#c8c3e8;flex-shrink:0;">
           <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Nagendra.jpg" alt="Nagendra S Hegde" onerror="this.style.display='none';this.parentElement.textContent='NH'">
         </div>
@@ -222,7 +222,7 @@
         </div>
       </div>
       <!-- Vice Captain -->
-      <div class="holo-card" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+      <div class="holo-card card-light-border" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
         <div class="avatar-ring" style="width:64px;height:64px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-size:1rem;color:#c8c3e8;">
           <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Arham.jpg" alt="Arham Yusuf Shiekh" onerror="this.style.display='none';this.parentElement.textContent='AY'">
         </div>
@@ -233,7 +233,7 @@
         </div>
       </div>
       <!-- Jt Secretary -->
-      <div class="holo-card" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+      <div class="holo-card card-light-border" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
         <div class="avatar-ring" style="width:64px;height:64px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-size:1rem;color:#c8c3e8;">
           <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Nikhil.jpg" alt="P Nikhil Pai" onerror="this.style.display='none';this.parentElement.textContent='NP'">
         </div>
@@ -244,7 +244,7 @@
         </div>
       </div>
       <!-- Jt Treasurer -->
-      <div class="holo-card" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+      <div class="holo-card card-light-border" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
         <div class="avatar-ring" style="width:64px;height:64px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-size:1rem;color:#c8c3e8;">
           <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Chandramouli.JPG" alt="Chandramouli Sharma" onerror="this.style.display='none';this.parentElement.textContent='CS'">
         </div>
@@ -255,7 +255,7 @@
         </div>
       </div>
       <!-- Workshop Lead (Savin) -->
-      <div class="holo-card" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+      <div class="holo-card card-light-border" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
         <div class="avatar-ring" style="width:64px;height:64px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-size:1rem;color:#c8c3e8;">
           <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Savin.jpg" alt="Savin Suresha Almeida" onerror="this.style.display='none';this.parentElement.textContent='SA'">
         </div>
@@ -266,7 +266,7 @@
         </div>
       </div>
       <!-- Pratham -->
-      <div class="holo-card" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+      <div class="holo-card card-light-border" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
         <div class="avatar-ring" style="width:64px;height:64px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-size:1rem;color:#c8c3e8;">
           <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Pratham Amin.jpeg" alt="Pratham Amin" onerror="this.style.display='none';this.parentElement.textContent='PA'">
         </div>
@@ -277,7 +277,7 @@
         </div>
       </div>
       <!-- Sameeksha -->
-      <div class="holo-card" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+      <div class="holo-card card-light-border" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
         <div class="avatar-ring" style="width:64px;height:64px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-size:1rem;color:#c8c3e8;">
           <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Sameeksha D.jpg" alt="Sameeksha D" onerror="this.style.display='none';this.parentElement.textContent='SD'">
         </div>
@@ -288,7 +288,7 @@
         </div>
       </div>
       <!-- Ayush -->
-      <div class="holo-card" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+      <div class="holo-card card-light-border" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
         <div class="avatar-ring" style="width:64px;height:64px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-size:1rem;color:#c8c3e8;">
           <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Ayush.jpg" alt="Y Ayush" onerror="this.style.display='none';this.parentElement.textContent='YA'">
         </div>
@@ -299,7 +299,7 @@
         </div>
       </div>
       <!-- Raghunandana -->
-      <div class="holo-card" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+      <div class="holo-card card-light-border" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
         <div class="avatar-ring" style="width:64px;height:64px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-size:1rem;color:#c8c3e8;">
           <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Raghunandan Mayya.jpeg" alt="Raghunandana Mayya" onerror="this.style.display='none';this.parentElement.textContent='RM'">
         </div>
@@ -310,7 +310,7 @@
         </div>
       </div>
       <!-- Pranav -->
-      <div class="holo-card" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
+      <div class="holo-card card-light-border" style="padding:18px 16px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;">
         <div class="avatar-ring" style="width:64px;height:64px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#1a1630;font-size:1rem;color:#c8c3e8;">
           <img style="width:100%;height:100%;object-fit:cover;" src="Officeb/Pranav S Salian.jpg" alt="Pranav S Salian" onerror="this.style.display='none';this.parentElement.textContent='PS'">
         </div>
@@ -330,7 +330,7 @@
 <!-- ══════════════════════════════════════════════
      DIVISIONS
 ══════════════════════════════════════════════ -->
-<section id="divisions" class="fade-in-section" style="padding:56px 24px;background:linear-gradient(180deg,#0a0812 0%,#110e1f 100%);">
+<section id="divisions" class="fade-in-section section-blue" style="padding:56px 24px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(59,130,246,0.13) 0%, transparent 60%), linear-gradient(180deg,#0a0f1e 0%,#0f1428 100%);">
   <div style="max-width:1100px;margin:0 auto;">
     <p class="section-eyebrow" style="text-align:center;">What We Do</p>
     <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-align:center;margin-bottom:48px;" class="grad-text">Our Divisions</h2>
@@ -378,7 +378,7 @@
 <!-- ══════════════════════════════════════════════
      RECENT EVENTS
 ══════════════════════════════════════════════ -->
-<section class="fade-in-section" style="padding:56px 24px;background:#0a0812;">
+<section class="fade-in-section section-orange" style="padding:56px 24px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
   <div style="max-width:1100px;margin:0 auto;">
     <p class="section-eyebrow" style="text-align:center;">Activities</p>
     <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-align:center;margin-bottom:48px;" class="grad-text-cyan">Recent Events & Workshops</h2>
@@ -399,7 +399,7 @@
       </article>
 
       <!-- 3-col row for small cards -->
-      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;width:100%;">
+      <div class="workshop-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;width:100%;">
       <article class="holo-card" style="padding:24px;margin:0;">
         <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1rem;color:#fff;margin-bottom:10px;">Internet Of Things</h3>
         <p style="font-size:0.88rem;line-height:1.7;color:rgba(200,195,232,0.7);">Workshops covering IoT fundamentals, sensor integration, and cloud connectivity.</p>
@@ -423,18 +423,18 @@
 <!-- ══════════════════════════════════════════════
      ACHIEVEMENTS PREVIEW — new zigzag layout
 ══════════════════════════════════════════════ -->
-<section class="fade-in-section orb-bg" style="padding:56px 24px;background:#0d0a1a;">
+<section class="fade-in-section orb-bg section-blue" style="padding:56px 24px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(59,130,246,0.13) 0%, transparent 60%), #0a0f1e;">
   <div style="max-width:1000px;margin:0 auto;">
     <p class="section-eyebrow" style="text-align:center;">Trophy Cabinet</p>
     <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-align:center;margin-bottom:56px;" class="grad-text">Our Achievements</h2>
 
     <!-- Zigzag: image left / right alternating -->
     <!-- Card 1: image left -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);">
-      <div style="overflow:hidden;max-height:280px;">
-        <img src="Achivements2025/Techtatva25.JPG" alt="TECHTATVA 2025" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null;this.src='https://placehold.co/600x400/110e1f/7c3aed?text=Techtatva+2025'">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;border-radius:20px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.16);">
+      <div style="overflow:hidden;max-height:340px;">
+        <img src="Achivements2025/Techtatva25.JPG" alt="TECHTATVA 2025" style="width:100%;height:100%;object-fit:cover;object-position:top center;" onerror="this.onerror=null;this.src='https://placehold.co/600x400/110e1f/7c3aed?text=Techtatva+2025'">
       </div>
-      <div style="background:#110e1f;padding:36px 32px;display:flex;flex-direction:column;justify-content:center;">
+      <div style="background:#1a1630;padding:36px 32px;display:flex;flex-direction:column;justify-content:center;">
         <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7c3aed;margin-bottom:10px;">Oct 2025 · MIT Manipal</span>
         <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;margin-bottom:12px;">Dominant Victory at TECHTATVA 2025</h3>
         <p style="font-size:0.88rem;line-height:1.7;color:rgba(200,195,232,0.7);margin-bottom:16px;">Swept top positions across Cadify, Maze Solver, Line Follower, Off-road Mayhem, and Water Rocket.</p>
@@ -451,8 +451,8 @@
     <div style="height:3px;background:linear-gradient(90deg,transparent,rgba(255,60,172,0.3),rgba(124,58,237,0.3),transparent);margin:0 0 4px;"></div>
 
     <!-- Card 2: image right -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,0.07);">
-      <div style="background:#110e1f;padding:36px 32px;display:flex;flex-direction:column;justify-content:center;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.16);">
+      <div style="background:#1a1630;padding:36px 32px;display:flex;flex-direction:column;justify-content:center;">
         <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#f97316;margin-bottom:10px;">Jul 2023 · National Level</span>
         <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;margin-bottom:12px;">Technoxian World Cup 2023</h3>
         <p style="font-size:0.88rem;line-height:1.7;color:rgba(200,195,232,0.7);margin-bottom:16px;">2nd runners-up in the Under 15kg Robowars category at one of India's most prestigious robotics championships.</p>
@@ -501,7 +501,7 @@
 <!-- ══════════════════════════════════════════════
      CONTACT
 ══════════════════════════════════════════════ -->
-<section id="contact" class="fade-in-section" style="padding:32px 24px 40px;background:#0a0812;">
+<section id="contact" class="fade-in-section section-orange" style="padding:32px 24px 40px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
   <div style="max-width:860px;margin:0 auto;">
     <p class="section-eyebrow" style="text-align:center;margin-bottom:4px;">Reach Out</p>
     <h2 style="font-family:'Inter',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;text-align:center;margin-bottom:18px;" class="grad-text">Get in Touch</h2>
@@ -511,25 +511,25 @@
         <div style="margin-bottom:12px;">
           <label style="display:block;font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(200,195,232,0.6);margin-bottom:6px;">Name</label>
           <input type="text" name="entry.887813559" required placeholder="Your full name" autocomplete="name"
-            style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:9px 14px;color:#fff;font-size:0.9rem;outline:none;transition:border-color 0.2s;"
+            style="width:100%;background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.2);border-radius:10px;padding:9px 14px;color:#fff;font-size:0.9rem;outline:none;transition:border-color 0.2s;"
             onfocus="this.style.borderColor='rgba(249,115,22,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
         </div>
         <div style="margin-bottom:12px;">
           <label style="display:block;font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(200,195,232,0.6);margin-bottom:6px;">Email</label>
           <input type="email" name="entry.2027395874" required placeholder="you@example.com" autocomplete="email"
-            style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:9px 14px;color:#fff;font-size:0.9rem;outline:none;transition:border-color 0.2s;"
+            style="width:100%;background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.2);border-radius:10px;padding:9px 14px;color:#fff;font-size:0.9rem;outline:none;transition:border-color 0.2s;"
             onfocus="this.style.borderColor='rgba(249,115,22,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
         </div>
         <div style="margin-bottom:12px;">
           <label style="display:block;font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(200,195,232,0.6);margin-bottom:6px;">Subject</label>
           <input type="text" name="entry.701956586" required placeholder="Subject"
-            style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:9px 14px;color:#fff;font-size:0.9rem;outline:none;transition:border-color 0.2s;"
+            style="width:100%;background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.2);border-radius:10px;padding:9px 14px;color:#fff;font-size:0.9rem;outline:none;transition:border-color 0.2s;"
             onfocus="this.style.borderColor='rgba(249,115,22,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'">
         </div>
         <div style="margin-bottom:14px;">
           <label style="display:block;font-size:0.78rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:rgba(200,195,232,0.6);margin-bottom:6px;">Message</label>
           <textarea name="entry.3234755" rows="3" required placeholder="Write your message here..."
-            style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:9px 14px;color:#fff;font-size:0.9rem;outline:none;resize:vertical;transition:border-color 0.2s;font-family:inherit;"
+            style="width:100%;background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.2);border-radius:10px;padding:9px 14px;color:#fff;font-size:0.9rem;outline:none;resize:vertical;transition:border-color 0.2s;font-family:inherit;"
             onfocus="this.style.borderColor='rgba(249,115,22,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.1)'"></textarea>
         </div>
         <button type="submit" class="btn-iris" style="width:100%;padding:10px 24px;font-size:0.9rem;">Send Message</button>
@@ -561,7 +561,7 @@
 </main>
 
 <!-- FOOTER -->
-<footer style="background:#080612;border-top:1px solid rgba(255,255,255,0.06);padding:36px 24px;text-align:center;">
+<footer style="background:#080612;border-top:1.5px solid rgba(255,255,255,0.16);padding:36px 24px;text-align:center;">
   <div class="iris-divider" style="margin-bottom:24px;"></div>
   <p style="font-family:'Inter',sans-serif;font-weight:700;font-size:0.95rem;color:#3b82f6;">Robotics Club Nitte</p>
   <p style="font-size:0.8rem;color:rgba(200,195,232,0.35);margin-top:8px;">NMAM Institute of Technology, Nitte &nbsp;·&nbsp; Est. 2014</p>

@@ -1,22 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+
+<html class="scroll-smooth" lang="en">
 <head>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z9SRW3KV80"></script>
-  <script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-Z9SRW3KV80"></script>
+<script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-Z9SRW3KV80');
   </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Achievements — Robotics Club Nitte</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
-  <!-- Tailwind compiled CSS (run: npm run dev) -->
-  <link rel="stylesheet" href="./dist/output.css">
-  <!-- Custom styles (colours, animations, components) -->
-  <link rel="stylesheet" href="style.css">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Achievements — Robotics Club Nitte</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300;1,400&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind compiled CSS (run: npm run dev) -->
+<link href="./dist/output.css" rel="stylesheet"/>
+<!-- Custom styles (colours, animations, components) -->
+<link href="style.css" rel="stylesheet"/>
+<style>
     /* Achievements-specific extras */
     .year-divider {
       display: flex;
@@ -55,6 +56,7 @@
     .ach-img-card {
       display: grid;
       grid-template-columns: 280px 1fr;
+      grid-template-areas: "photo title" "photo text";
       background: var(--surface, #1a1630);
       border: 1.6px solid var(--accent-border, rgba(255,255,255,0.16));
       border-radius: 16px;
@@ -65,10 +67,12 @@
       transform: translateY(-3px);
       box-shadow: 0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(249,115,22,0.2);
     }
-    .ach-img-card img {
+    .ach-img-card .mc2-photo { grid-area: photo; overflow: hidden; }
+    .ach-img-card .mc2-photo img {
       width: 100%; height: 100%; min-height: 260px; object-fit: cover; display: block;
     }
-    .ach-img-card .body { padding: 24px 28px; display: flex; flex-direction: column; justify-content: center; }
+    .ach-img-card .mc2-title { grid-area: title; padding: 24px 28px 0; align-self: end; }
+    .ach-img-card .mc2-text { grid-area: text; padding: 8px 28px 24px; }
 
     /* Text-only card */
     .ach-text-card {
@@ -85,61 +89,92 @@
       box-shadow: -4px 0 24px rgba(255,60,172,0.18);
     }
 
+    /* Plain style for pre-2022 achievements — no medal badges, no photos */
+    .ach-plain-card {
+      background: var(--surface, #1a1630);
+      border: 1.5px solid var(--accent-border, rgba(255,255,255,0.16));
+      border-radius: 12px;
+      padding: 16px 20px;
+      transition: border-color 0.3s ease;
+    }
+    .ach-plain-card .plain-date {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: rgba(200,195,232,0.55);
+      margin-bottom: 4px;
+    }
+    .ach-plain-card h2 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .ach-plain-card .plain-result {
+      font-size: 0.82rem;
+      color: rgba(200,195,232,0.75);
+      line-height: 1.5;
+    }
+
     @media (max-width: 600px) {
-      .ach-img-card { grid-template-columns: 1fr; }
-      .ach-img-card img { height: 240px; min-height: 240px; }
+      .ach-img-card {
+        grid-template-columns: 1fr;
+        grid-template-areas: "title" "photo" "text";
+      }
+      .ach-img-card .mc2-photo img { height: 240px; min-height: 240px; }
+      .ach-img-card .mc2-title { padding: 18px 20px 10px; align-self: auto; }
+      .ach-img-card .mc2-text { padding: 0 20px 18px; }
     }
   </style>
 </head>
 <body style="background-color:#0a0812;color:#c8c3e8;font-family:'Source Sans 3','Inter',sans-serif;">
 <!-- ══ STICKY TOPBAR ══ -->
 <div id="topbar" style="position:fixed;top:0;left:0;right:0;z-index:300;height:64px;background:rgba(10,8,18,0.95);backdrop-filter:blur(16px);border-bottom:1.5px solid rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:space-between;padding:0 16px;">
-  <!-- Left: back button -->
-  <a id="back-btn" href="javascript:history.back()" aria-label="Go back" style="width:40px;height:40px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.2);background:rgba(249,115,22,0.12);display:flex;align-items:center;justify-content:center;color:#f97316;text-decoration:none;transition:background 0.2s;" onmouseover="this.style.background='rgba(249,115,22,0.25)'" onmouseout="this.style.background='rgba(249,115,22,0.12)'">
-    <svg width="18" height="18" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" d="M15 19l-7-7 7-7"/></svg>
-  </a>
-  <!-- Center: brand -->
-  <a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:8px;position:absolute;left:50%;transform:translateX(-50%);">
-    <span style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;letter-spacing:-0.01em;">Robotics Club <span style="color:#3b82f6;">Nitte</span></span>
-  </a>
-  <!-- Right: hamburger (orange) -->
-  <button id="sidebar-toggle" aria-label="Open navigation" style="width:46px;height:46px;border-radius:12px;border:2px solid #f97316;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#f97316;transition:box-shadow 0.2s,transform 0.15s;box-shadow:0 0 10px rgba(249,115,22,0.4),inset 0 0 10px rgba(249,115,22,0.05);" onmouseover="this.style.boxShadow='0 0 20px rgba(249,115,22,0.75),inset 0 0 14px rgba(249,115,22,0.1)';this.style.transform='scale(1.05)'" onmouseout="this.style.boxShadow='0 0 10px rgba(249,115,22,0.4),inset 0 0 10px rgba(249,115,22,0.05)';this.style.transform='scale(1)'">
-    <svg id="icon-open"  width="26" height="26" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
-    <svg id="icon-close" width="22" height="22" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display:none;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
-  </button>
+<!-- Left: back button -->
+<a aria-label="Go back" href="javascript:history.back()" id="back-btn" onmouseout="this.style.background='rgba(249,115,22,0.12)'" onmouseover="this.style.background='rgba(249,115,22,0.25)'" style="width:40px;height:40px;border-radius:10px;border:1.5px solid rgba(255,255,255,0.2);background:rgba(249,115,22,0.12);display:flex;align-items:center;justify-content:center;color:#f97316;text-decoration:none;transition:background 0.2s;">
+<svg fill="none" height="18" stroke="currentColor" viewbox="0 0 24 24" width="18"><path d="M15 19l-7-7 7-7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path></svg>
+</a>
+<!-- Center: brand -->
+<a href="index.html" style="text-decoration:none;display:flex;align-items:center;gap:8px;position:absolute;left:50%;transform:translateX(-50%);">
+<span style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;letter-spacing:-0.01em;">Robotics Club <span style="color:#3b82f6;">Nitte</span></span>
+</a>
+<!-- Right: hamburger (orange) -->
+<button aria-label="Open navigation" id="sidebar-toggle" onmouseout="this.style.boxShadow='0 0 10px rgba(249,115,22,0.4),inset 0 0 10px rgba(249,115,22,0.05)';this.style.transform='scale(1)'" onmouseover="this.style.boxShadow='0 0 20px rgba(249,115,22,0.75),inset 0 0 14px rgba(249,115,22,0.1)';this.style.transform='scale(1.05)'" style="width:46px;height:46px;border-radius:12px;border:2px solid #f97316;background:transparent;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#f97316;transition:box-shadow 0.2s,transform 0.15s;box-shadow:0 0 10px rgba(249,115,22,0.4),inset 0 0 10px rgba(249,115,22,0.05);">
+<svg fill="none" height="26" id="icon-open" stroke="currentColor" viewbox="0 0 24 24" width="26"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+<svg fill="none" height="22" id="icon-close" stroke="currentColor" style="display:none;" viewbox="0 0 24 24" width="22"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path></svg>
+</button>
 </div>
-
 <!-- ══ SIDEBAR BACKDROP ══ -->
 <div id="sidebar-backdrop" style="position:fixed;inset:0;z-index:310;background:rgba(0,0,0,0.6);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity 0.3s ease;"></div>
-
 <!-- ══ SIDE PANEL ══ -->
 <nav id="sidebar" style="position:fixed;top:0;left:0;height:100vh;width:280px;z-index:320;background:rgba(14,11,26,0.98);backdrop-filter:blur(24px);border-right:1.5px solid rgba(255,255,255,0.16);transform:translateX(-100%);transition:transform 0.35s cubic-bezier(.22,1,.36,1);display:flex;flex-direction:column;overflow-y:auto;">
-  <div style="padding:20px 24px 16px;border-bottom:1.5px solid rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:space-between;">
-    <a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
-      <div style="background:#e2e8f0;border-radius:50%;padding:3px;flex-shrink:0;">
-        <img src="Images/robo.png" alt="Logo" style="height:36px;width:auto;">
-      </div>
-      <div>
-        <p style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;line-height:1.2;margin:0;">Robotics Club</p>
-        <p style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;line-height:1.2;color:#3b82f6;margin:0;">Nitte</p>
-      </div>
-    </a>
-    <button onclick="closeSidebar()" style="width:32px;height:32px;border-radius:8px;border:1.5px solid rgba(255,255,255,0.2);background:transparent;cursor:pointer;color:rgba(200,195,232,0.5);display:flex;align-items:center;justify-content:center;" aria-label="Close">
-      <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
-    </button>
-  </div>
-  <div style="padding:16px 12px;flex:1;">
-    <p style="font-size:0.58rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(200,195,232,0.3);padding:0 8px;margin:0 0 8px;">Navigation</p>
-    <a href="index.html#about"     class="side-link" onclick="closeSidebar()"><span class="side-icon"><svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></span>About Us</a>
-    <a href="index.html#divisions" class="side-link" onclick="closeSidebar()"><span class="side-icon"><svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg></span>Divisions</a>
-    <a href="achievements.html"    class="side-link"><span class="side-icon"><svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg></span>Achievements</a>
-    <a href="index.html#contact"   class="side-link" onclick="closeSidebar()"><span class="side-icon"><svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg></span>Contact Us</a>
-  </div>
-  <div style="padding:14px 24px;border-top:1.5px solid rgba(255,255,255,0.16);">
-    <p style="font-size:0.7rem;color:rgba(200,195,232,0.3);margin:0;">NMAM Institute of Technology, Nitte</p>
-  </div>
+<div style="padding:20px 24px 16px;border-bottom:1.5px solid rgba(255,255,255,0.16);display:flex;align-items:center;justify-content:space-between;">
+<a href="index.html" style="display:flex;align-items:center;gap:10px;text-decoration:none;">
+<div style="background:#e2e8f0;border-radius:50%;padding:3px;flex-shrink:0;">
+<img alt="Logo" src="Images/robo.png" style="height:36px;width:auto;"/>
+</div>
+<div>
+<p style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;line-height:1.2;margin:0;">Robotics Club</p>
+<p style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;line-height:1.2;color:#3b82f6;margin:0;">Nitte</p>
+</div>
+</a>
+<button aria-label="Close" onclick="closeSidebar()" style="width:32px;height:32px;border-radius:8px;border:1.5px solid rgba(255,255,255,0.2);background:transparent;cursor:pointer;color:rgba(200,195,232,0.5);display:flex;align-items:center;justify-content:center;">
+<svg fill="none" height="14" stroke="currentColor" viewbox="0 0 24 24" width="14"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+</button>
+</div>
+<div style="padding:16px 12px;flex:1;">
+<p style="font-size:0.58rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(200,195,232,0.3);padding:0 8px;margin:0 0 8px;">Navigation</p>
+<a class="side-link" href="index.html#about" onclick="closeSidebar()"><span class="side-icon"><svg fill="none" height="15" stroke="currentColor" viewbox="0 0 24 24" width="15"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></span>About Us</a>
+<a class="side-link" href="index.html#divisions" onclick="closeSidebar()"><span class="side-icon"><svg fill="none" height="15" stroke="currentColor" viewbox="0 0 24 24" width="15"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></span>Divisions</a>
+<a class="side-link" href="achievements.html"><span class="side-icon"><svg fill="none" height="15" stroke="currentColor" viewbox="0 0 24 24" width="15"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></span>Achievements</a>
+<a class="side-link" href="index.html#contact" onclick="closeSidebar()"><span class="side-icon"><svg fill="none" height="15" stroke="currentColor" viewbox="0 0 24 24" width="15"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg></span>Contact Us</a>
+</div>
+<div style="padding:14px 24px;border-top:1.5px solid rgba(255,255,255,0.16);">
+<p style="font-size:0.7rem;color:rgba(200,195,232,0.3);margin:0;">NMAM Institute of Technology, Nitte</p>
+</div>
 </nav>
-
 <!-- ══ SIDEBAR STYLES & JS ══ -->
 <style>
   body { padding-top: 64px; }
@@ -172,396 +207,590 @@
   }
 </script>
 
-
-</header>
-
 <main style="padding:60px 24px 80px;">
-  <div style="max-width:900px;margin:0 auto;">
+<div style="max-width:900px;margin:0 auto;">
+<!-- Page title -->
+<div style="text-align:center;margin-bottom:60px;">
+<p class="section-eyebrow">Since 2014</p>
+<h1 class="grad-text" style="font-family:'Inter',sans-serif;font-size:clamp(2.2rem,6vw,4rem);font-weight:800;line-height:1.1;margin-top:8px;">Our Achievements</h1>
+<p style="margin-top:16px;font-size:1rem;color:rgba(200,195,232,0.6);max-width:520px;margin-left:auto;margin-right:auto;">A record of excellence built across national and international robotics competitions.</p>
+</div>
+<!-- ═══ 2026 ═══ -->
+<div class="year-divider"><span>2026</span><div class="line"></div></div>
+<div class="section-orange" style="padding:28px 24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
+<div style="display:flex;flex-direction:column;gap:14px;">
+<!-- Aakar 2026 — IMAGE CARD -->
+<div class="ach-entry ach-img-card">
 
-    <!-- Page title -->
-    <div style="text-align:center;margin-bottom:60px;">
-      <p class="section-eyebrow">Since 2014</p>
-      <h1 style="font-family:'Inter',sans-serif;font-size:clamp(2.2rem,6vw,4rem);font-weight:800;line-height:1.1;margin-top:8px;" class="grad-text">Our Achievements</h1>
-      <p style="margin-top:16px;font-size:1rem;color:rgba(200,195,232,0.6);max-width:520px;margin-left:auto;margin-right:auto;">A record of excellence built across national and international robotics competitions.</p>
-    </div>
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Apr 24–25, 2026 · AJ Institute of Technology</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Aakar 2026</h2></div><div class="mc2-photo"><img alt="Aakar 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Aakar+2026'" src="Achivements2026/Aj_aakar.jpeg"/></div><div class="mc2-text">
 
-    <!-- ═══ 2026 ═══ -->
-    <div class="year-divider"><span>2026</span><div class="line"></div></div>
-    <div class="section-orange" style="padding:28px 24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
 
-    <div style="display:flex;flex-direction:column;gap:14px;">
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span><span class="medal medal-silver">🥈 Line Follower</span><span class="medal medal-silver">🥈 Robo Soccer</span></div>
+</div>
+</div>
+<!-- Sentia 2026 — IMAGE CARD -->
+<div class="ach-entry ach-img-card">
 
-      <!-- Aakar 2026 — IMAGE CARD -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2026/Aj_aakar.jpeg" alt="Aakar 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Aakar+2026'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Apr 24–25, 2026 · AJ Institute of Technology</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Aakar 2026</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span><span class="medal medal-silver">🥈 Line Follower</span><span class="medal medal-silver">🥈 Robo Soccer</span></div>
-        </div>
-      </div>
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Mar 23, 2026 · MITE, Mangalore</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Sentia 2026</h2></div><div class="mc2-photo"><img alt="Sentia 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Sentia+2026'" src="Achivements2026/Sentia26.jpeg"/></div><div class="mc2-text">
 
-      <!-- Sentia 2026 — IMAGE CARD -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2026/Sentia26.jpeg" alt="Sentia 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Sentia+2026'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Mar 23, 2026 · MITE, Mangalore</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Sentia 2026</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Robo Soccer</span></div>
-        </div>
-      </div>
 
-      <!-- Aakrti 2026 — IMAGE CARD -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2026/Aakrti26.jpeg" alt="Aakrti 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Aakrti+2026'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Mar 14, 2026 · Canara Engineering College</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Aakrti 2026</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-bronze">🥉 Line Follower</span></div>
-        </div>
-      </div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Robo Soccer</span></div>
+</div>
+</div>
+<!-- Aakrti 2026 — IMAGE CARD -->
+<div class="ach-entry ach-img-card">
 
-      <!-- Incridea 2026 -->
-      <div class="ach-entry ach-text-card">
-        <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 5–8, 2026 · NMAMIT</p>
-        <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.25rem;color:#fff;margin-bottom:8px;">Incridea 2026</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-silver">🥈 Line Follower</span></div>
-      </div>
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Mar 14, 2026 · Canara Engineering College</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Aakrti 2026</h2></div><div class="mc2-photo"><img alt="Aakrti 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Aakrti+2026'" src="Achivements2026/Aakrti26.jpeg"/></div><div class="mc2-text">
 
-      <!-- Fastbit 2026 — IMAGE CARD -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2026/Fastbit_26.jpeg" alt="Fastbit Embedded Systems 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Fastbit+2026'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 26, 2026 · Udupi</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Fastbit Embedded Systems 2026</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 PCB Design</span><span class="medal medal-silver">🥈 Robo Soccer</span></div>
-        </div>
-      </div>
 
-    </div><!-- /2026 -->
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-bronze">🥉 Line Follower</span></div>
+</div>
+</div>
+<!-- Incridea 2026 -->
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 5–8, 2026 · NMAMIT</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.25rem;color:#fff;margin-bottom:8px;">Incridea 2026</h2>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-silver">🥈 Line Follower</span></div>
+</div>
+<!-- Fastbit 2026 — IMAGE CARD -->
+<div class="ach-entry ach-img-card">
+
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 26, 2026 · Udupi</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Fastbit Embedded Systems 2026</h2></div><div class="mc2-photo"><img alt="Fastbit Embedded Systems 2026" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Fastbit+2026'" src="Achivements2026/Fastbit_26.jpeg"/></div><div class="mc2-text">
+
+
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 PCB Design</span><span class="medal medal-silver">🥈 Robo Soccer</span></div>
+</div>
+</div>
+</div><!-- /2026 -->
 </div><!-- /theme-2026 -->
+<!-- ═══ 2025 ═══ -->
+<div class="year-divider"><span>2025</span><div class="line"></div></div>
+<div class="section-blue" style="padding:28px 24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(59,130,246,0.13) 0%, transparent 60%), #0a0f1e;">
+<div style="display:flex;flex-direction:column;gap:14px;">
+<!-- Sambhram 2025 — IMAGE CARD -->
+<div class="ach-entry ach-img-card">
 
-    <!-- ═══ 2025 ═══ -->
-    <div class="year-divider"><span>2025</span><div class="line"></div></div>
-    <div class="section-blue" style="padding:28px 24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(59,130,246,0.13) 0%, transparent 60%), #0a0f1e;">
-    <div style="display:flex;flex-direction:column;gap:14px;">
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Dec 3–4, 2025 · Shree Devi Institute of Technology</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Sambhram-2025</h2></div><div class="mc2-photo"><img alt="Sambhram 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+2025'" src="Achivements2025/Sambhram25.jpeg"/></div><div class="mc2-text">
 
-      <!-- Sambhram 2025 — IMAGE CARD -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Sambhram25.jpeg" alt="Sambhram 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+2025'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Dec 3–4, 2025 · SDIT, Mangalore</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Sambhram-2025</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span><span class="medal medal-gold">🥇 Robo Soccer</span></div>
-        </div>
-      </div>
 
-      <!-- Tiara 2025 — IMAGE CARD -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Tiara2025.jpg" alt="Tiara 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Tiara+2025'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Nov 13–14, 2025 · SJEC, Mangalore</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Tiara-2025</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span><span class="medal medal-silver">🥈 Line Follower</span></div>
-        </div>
-      </div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span><span class="medal medal-gold">🥇 Robo Soccer</span></div>
+</div>
+</div>
+<!-- Tiara 2025 — IMAGE CARD -->
+<div class="ach-entry ach-img-card">
 
-      <!-- Yensplash 2025 — IMAGE CARD -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Yensplash2025.jpg" alt="Yensplash 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Yensplash+2025'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Nov 11–12, 2025 · YIT, Moodbidre</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Yensplash-2025</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Micromouse / Maze Solver</span></div>
-        </div>
-      </div>
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Nov 13–14, 2025 · SJEC, Mangalore</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Tiara-2025</h2></div><div class="mc2-photo"><img alt="Tiara 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Tiara+2025'" src="Achivements2025/Tiara2025.jpg"/></div><div class="mc2-text">
 
-      <!-- Synergia 2025 — IMAGE CARD -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Synergia2025.jpg" alt="Synergia 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Synergia+2025'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Nov 6–8, 2025 · Sahyadri, Mangalore</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Synergia-2025</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;">
-            <span class="medal medal-gold">🥇🥈🥉 Line Follower</span>
-            <span class="medal medal-gold">🥇🥈🥉 Water Rocket</span>
-            <span class="medal medal-silver">🥈 CAD</span>
-          </div>
-        </div>
-      </div>
 
-      <!-- TECHTATVA 2025 — IMAGE CARD (featured) -->
-      <div class="ach-entry" style="background:#1a1630;border:1.5px solid rgba(255,255,255,0.16);border-radius:16px;overflow:hidden;transition:box-shadow 0.3s;" onmouseover="this.style.boxShadow='0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(124,58,237,0.3)'" onmouseout="this.style.boxShadow='none'">
-        <div style="overflow:hidden;max-height:300px;">
-          <img src="Achivements2025/Techtatva25.JPG" alt="TECHTATVA 2025" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null;this.src='https://placehold.co/900x400/110e1f/7c3aed?text=Techtatva+2025'">
-        </div>
-        <div style="padding:28px 32px;">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7c3aed;margin-bottom:6px;">Oct 8–11, 2025 · MIT, Manipal</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.3rem;color:#fff;margin-bottom:10px;">TECHTATVA 2025 <span style="font-size:0.75rem;font-weight:400;color:rgba(200,195,232,0.5);">— Dominant sweep</span></h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;">
-            <span class="medal medal-silver">🥈 Cadify</span>
-            <span class="medal medal-gold">🥇🥈🥉 Maze Solver</span>
-            <span class="medal medal-gold">🥇🥈🥉 Line Follower</span>
-            <span class="medal medal-gold">🥇🥈🥉 Off-road Mayhem</span>
-            <span class="medal medal-gold">🥇🥈 Water Rocket</span>
-          </div>
-        </div>
-      </div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span><span class="medal medal-silver">🥈 Line Follower</span></div>
+</div>
+</div>
+<!-- Yensplash 2025 — IMAGE CARD -->
+<div class="ach-entry ach-img-card">
 
-      <!-- ENGINEER 2025 — IMAGE CARD -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Engineer2025.jpg" alt="ENGINEER 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Engineer+2025'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Sep 28, 2025 · NITK, Suratkal</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">ENGINEER 2025</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span><span class="medal medal-bronze">🥉 Line Follower</span></div>
-        </div>
-      </div>
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Nov 11–12, 2025 · YIT, Moodbidre</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Yensplash-2025</h2></div><div class="mc2-photo"><img alt="Yensplash 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Yensplash+2025'" src="Achivements2025/Yensplash2025.jpg"/></div><div class="mc2-text">
 
-      <!-- Text-only entries for 2025 -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 19–20, 2025 · SMVIT Bantakal</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">SMVIT Bantakal</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-silver">🥈 Line Follower</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 19–20, 2025 · SJEC</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TIARA 25</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 LFR</span><span class="medal medal-silver">🥈 LFR</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 11–12, 2025 · SIT</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECHYUVA'25</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Feb 27–Mar 1, 2025 · NMAMIT</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">INCRIDEA-25</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 LFR</span><span class="medal medal-silver">🥈 LFR</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Feb 6–8, 2025 · BITS Goa</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">Quark 25</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span></div>
-        </div>
-      </div>
 
-    </div><!-- /2025 -->
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Micromouse / Maze Solver</span></div>
+</div>
+</div>
+<!-- Synergia 2025 — IMAGE CARD -->
+<div class="ach-entry ach-img-card">
+
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Nov 6–8, 2025 · Sahyadri, Mangalore</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Synergia-2025</h2></div><div class="mc2-photo"><img alt="Synergia 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Synergia+2025'" src="Achivements2025/Synergia2025.jpg"/></div><div class="mc2-text">
+
+
+<div style="display:flex;flex-wrap:wrap;gap:6px;">
+<span class="medal medal-gold">🥇🥈🥉 Line Follower</span>
+<span class="medal medal-gold">🥇🥈🥉 Water Rocket</span>
+<span class="medal medal-silver">🥈 CAD</span>
+</div>
+</div>
+</div>
+<!-- TECHTATVA 2025 — IMAGE CARD (featured) -->
+<div class="ach-entry" onmouseout="this.style.boxShadow='none'" onmouseover="this.style.boxShadow='0 20px 60px rgba(0,0,0,0.5),0 0 0 1px rgba(124,58,237,0.3)'" style="background:#1a1630;border:1.5px solid rgba(255,255,255,0.16);border-radius:16px;overflow:hidden;transition:box-shadow 0.3s;">
+<div style="padding:24px 32px 0;">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#7c3aed;margin-bottom:6px;">Oct 8–11, 2025 · MIT, Manipal</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.3rem;color:#fff;margin-bottom:0;">TECHTATVA 2025 <span style="font-size:0.75rem;font-weight:400;color:rgba(200,195,232,0.5);">— Dominant sweep</span></h2>
+</div>
+<div style="overflow:hidden;max-height:300px;margin-top:16px;">
+<img alt="TECHTATVA 2025" onerror="this.onerror=null;this.src='https://placehold.co/900x400/110e1f/7c3aed?text=Techtatva+2025'" src="Achivements2025/Techtatva25.JPG" style="width:100%;height:100%;object-fit:cover;"/>
+</div>
+<div style="padding:16px 32px 28px;">
+<div style="display:flex;flex-wrap:wrap;gap:6px;">
+<span class="medal medal-silver">🥈 Cadify</span>
+<span class="medal medal-gold">🥇🥈🥉 Maze Solver</span>
+<span class="medal medal-gold">🥇🥈🥉 Line Follower</span>
+<span class="medal medal-gold">🥇🥈🥉 Off-road Mayhem</span>
+<span class="medal medal-gold">🥇🥈 Water Rocket</span>
+</div>
+</div>
+</div>
+<!-- ENGINEER 2025 — IMAGE CARD -->
+<div class="ach-entry ach-img-card">
+
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Sep 28, 2025 · NITK, Suratkal</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">ENGINEER 2025</h2></div><div class="mc2-photo"><img alt="ENGINEER 2025" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Engineer+2025'" src="Achivements2025/Engineer2025.jpg"/></div><div class="mc2-text">
+
+
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span><span class="medal medal-bronze">🥉 Line Follower</span></div>
+</div>
+</div>
+<!-- Text-only entries for 2025 -->
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 19–20, 2025 · SMVIT Bantakal</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">SMVIT Bantakal</h2>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-silver">🥈 Line Follower</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 19–20, 2025 · SJEC</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TIARA 25</h2>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 LFR</span><span class="medal medal-silver">🥈 LFR</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 11–12, 2025 · SIT</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECHYUVA'25</h2>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Feb 27–Mar 1, 2025 · NMAMIT</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">INCRIDEA-25</h2>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 LFR</span><span class="medal medal-silver">🥈 LFR</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Feb 6–8, 2025 · BITS Goa</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">Quark 25</h2>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇 Line Follower</span></div>
+</div>
+</div>
+</div><!-- /2025 -->
 </div><!-- /theme-2025 -->
+<!-- ═══ 2024 ═══ -->
+<div class="year-divider"><span>2024</span><div class="line"></div></div>
+<div class="section-orange" style="padding:28px 24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
+<div style="display:flex;flex-direction:column;gap:14px;">
+<!-- Sambhram 2024 — image -->
+<div class="ach-entry ach-img-card">
 
-    <!-- ═══ 2024 ═══ -->
-    <div class="year-divider"><span>2024</span><div class="line"></div></div>
-    <div class="section-orange" style="padding:28px 24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
-    <div style="display:flex;flex-direction:column;gap:14px;">
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Dec 6–7, 2024 · Shree Devi Institute of Technology</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Sambhram 2024</h2></div><div class="mc2-photo"><img alt="Sambhram 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+2024'" src="Achivements2025/Sambhram24.jpeg"/></div><div class="mc2-text">
 
-      <!-- Sambhram 2024 — image -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Sambhram24.jpeg" alt="Sambhram 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+2024'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Dec 6–7, 2024 · SDIT, Mangalore</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Sambhram 2024</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇🥈 Robo Race</span><span class="medal medal-gold">🥇🥈 Robo Soccer</span><span class="medal medal-gold">🥇 Maze Solver</span></div>
-        </div>
-      </div>
 
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Nov 9, 2024 · Sahyadri</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">Synergia 2024</h2>
-          <span class="medal medal-silver">🥈 Line Follower</span>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Oct 18, 2024 · NITK</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">Engineer-24</h2>
-          <span class="medal medal-gold">🥇 Line Follower</span>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 15–17, 2024 · SVNIT Surat</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">MINDBEND'24</h2>
-          <span class="medal medal-bronze">🥉 Robo Wars</span>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Feb 22–24, 2024 · NMAMIT</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">INCRIDEA'24</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇🥈 Robo Race</span><span class="medal medal-silver">🥈 Line Follower</span></div>
-        </div>
-      </div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇🥈 Robo Race</span><span class="medal medal-gold">🥇🥈 Robo Soccer</span><span class="medal medal-gold">🥇 Maze Solver</span></div>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Nov 9, 2024 · Sahyadri</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">Synergia 2024</h2>
+<span class="medal medal-silver">🥈 Line Follower</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Oct 18, 2024 · NITK</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">Engineer-24</h2>
+<span class="medal medal-gold">🥇 Line Follower</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 15–17, 2024 · SVNIT Surat</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">MINDBEND'24</h2>
+<span class="medal medal-bronze">🥉 Robo Wars</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Feb 22–24, 2024 · NMAMIT</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">INCRIDEA'24</h2>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-gold">🥇🥈 Robo Race</span><span class="medal medal-silver">🥈 Line Follower</span></div>
+</div>
+</div>
+<!-- Quantum 2024 — image -->
+<div class="ach-entry ach-img-card">
 
-      <!-- Quantum 2024 — image -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Quantum2024.jpg" alt="QUANTUM 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Quantum+2024'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 23–25, 2024 · NHCE, Bangalore</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">QUANTUM'24</h2>
-          <span class="medal medal-silver">🥈 Robo Wars</span>
-        </div>
-      </div>
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 23–25, 2024 · NHCE, Bangalore</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">QUANTUM'24</h2></div><div class="mc2-photo"><img alt="QUANTUM 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/06b6d4?text=Quantum+2024'" src="Achivements2025/Quantum2024.jpg"/></div><div class="mc2-text">
 
-      <!-- Technovanza 2024 — image -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Technovanza2024.jpg" alt="TECHNOVANZA 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Technovanza+2024'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 12–14, 2024 · VJTI, Mumbai</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">TECHNOVANZA'24</h2>
-          <span class="medal medal-gold">🥇 Robo Wars</span>
-        </div>
-      </div>
 
-      <!-- SAMBHRAM'24 — image -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Sambhram2024.jpg" alt="SAMBHRAM 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+Jan+2024'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 6–7, 2024 · Sree Devi</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">SAMBHRAM'24</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:5px;">
-            <span class="medal medal-gold">🥇 Water Rocket</span>
-            <span class="medal medal-gold">🥇 Robo Soccer</span>
-            <span class="medal medal-gold">🥇🥈 Robo Race</span>
-            <span class="medal medal-silver">🥈 Maze Solver</span>
-          </div>
-        </div>
-      </div>
+<span class="medal medal-silver">🥈 Robo Wars</span>
+</div>
+</div>
+<!-- Technovanza 2024 — image -->
+<div class="ach-entry ach-img-card">
 
-    </div><!-- /2024 -->
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 12–14, 2024 · VJTI, Mumbai</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">TECHNOVANZA'24</h2></div><div class="mc2-photo"><img alt="TECHNOVANZA 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Technovanza+2024'" src="Achivements2025/Technovanza2024.jpg"/></div><div class="mc2-text">
+
+
+<span class="medal medal-gold">🥇 Robo Wars</span>
+</div>
+</div>
+<!-- SAMBHRAM'24 — image -->
+<div class="ach-entry ach-img-card">
+
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 6–7, 2024 · Shree Devi Institute of Technology</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">SAMBHRAM'24</h2></div><div class="mc2-photo"><img alt="SAMBHRAM 2024" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/ff3cac?text=Sambhram+Jan+2024'" src="Achivements2025/Sambhram2024.jpg"/></div><div class="mc2-text">
+
+
+<div style="display:flex;flex-wrap:wrap;gap:5px;">
+<span class="medal medal-gold">🥇 Water Rocket</span>
+<span class="medal medal-gold">🥇 Robo Soccer</span>
+<span class="medal medal-gold">🥇🥈 Robo Race</span>
+<span class="medal medal-silver">🥈 Maze Solver</span>
+</div>
+</div>
+</div>
+</div><!-- /2024 -->
 </div><!-- /theme-2024 -->
+<!-- ═══ 2023 ═══ -->
+<div class="year-divider"><span>2023</span><div class="line"></div></div>
+<div class="section-blue" style="padding:28px 24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(59,130,246,0.13) 0%, transparent 60%), #0a0f1e;">
+<div style="display:flex;flex-direction:column;gap:14px;">
+<!-- Aerophilia, TECHTATVA, ENGINEER each get image cards -->
+<div class="ach-entry ach-img-card">
 
-    <!-- ═══ 2023 ═══ -->
-    <div class="year-divider"><span>2023</span><div class="line"></div></div>
-    <div class="section-blue" style="padding:28px 24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(59,130,246,0.13) 0%, transparent 60%), #0a0f1e;">
-    <div style="display:flex;flex-direction:column;gap:14px;">
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Dec 8–9, 2023 · Sahyadri</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">AEROPHILIA'23</h2></div><div class="mc2-photo"><img alt="AEROPHILIA 2023" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Aerophilia+2023'" src="Achivements2025/Aerophilia2023.jpg"/></div><div class="mc2-text">
 
-      <!-- Aerophilia, TECHTATVA, ENGINEER each get image cards -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Aerophilia2023.jpg" alt="AEROPHILIA 2023" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/7c3aed?text=Aerophilia+2023'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Dec 8–9, 2023 · Sahyadri</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">AEROPHILIA'23</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-silver">🥈 Robo Sumo</span><span class="medal medal-bronze">🥉 Line Follower</span></div>
-        </div>
-      </div>
 
-      <!-- Technoxian 2023 — IMAGE CARD -->
-      <div class="ach-entry ach-img-card">
-        <img src="Achivements2025/Technoxian2023.jpg" alt="Technoxian 2023" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Technoxian+2023'">
-        <div class="body">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jul 25–27, 2023 · National</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Technoxian World Cup 2023</h2>
-          <p style="font-size:0.85rem;color:rgba(200,195,232,0.7);margin-bottom:10px;">Competed in the Under 15kg Robowars category on the national stage.</p>
-          <span class="medal medal-bronze">🥉 Robowars U15kg</span>
-        </div>
-      </div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;"><span class="medal medal-silver">🥈 Robo Sumo</span><span class="medal medal-bronze">🥉 Line Follower</span></div>
+</div>
+</div>
+<!-- Technoxian 2023 — IMAGE CARD -->
+<div class="ach-entry ach-img-card">
 
-      <!-- Grid of text cards for 2023 -->
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Oct 20–21, 2023 · MIT Manipal</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECHTATVA'23</h2>
-          <span class="medal medal-bronze">🥉 Robo Wars</span>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Oct 13–14, 2023 · NITK</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">ENGINEER'23</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-bronze">🥉 Robo Wars</span><span class="medal medal-gold">🥇 Line Follower</span><span class="medal medal-bronze">🥉 LFR</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Jun 22–23, 2023 · SIT Mukka</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECHYUVA'23</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Robo Soccer</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">May 19–20, 2023 · Yenepoya</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">YENSPLASH 2023</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Soccer</span><span class="medal medal-gold">🥇🥈 Race</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Apr 19, 2023 · Anna University</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">KURUKSHETRA 2023</h2>
-          <span class="medal medal-silver">🥈 Robo Wars 15kg</span>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 31, 2023 · CEC</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">Aakriti 2023</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇 Soccer</span><span class="medal medal-gold">🥇 Race</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 28, 2023 · SIT Mangalore</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">ENVISION 2023</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇 Soccer</span><span class="medal medal-gold">🥇🥈 LFR</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 23–25, 2023 · SJEC</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TIARA 2023</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Soccer</span><span class="medal medal-gold">🥇🥈 LFR</span><span class="medal medal-silver">🥈 Race</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 15–16, 2023 · MITE</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">SENTIA 2023</h2>
-          <span class="medal medal-silver">🥈 Line Follower</span>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Feb 24–25, 2023 · VJTI Mumbai</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECHNOVANZA 2023</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-bronze">🥉 Robo Wars 15kg</span><span class="medal medal-bronze">🥉 Robo Sumo 15kg</span></div>
-        </div>
-        <div class="ach-entry ach-text-card">
-          <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Apr 26–29, 2023 · NMAMIT</p>
-          <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">INCRIDEA 2023</h2>
-          <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Robo Soccer</span></div>
-        </div>
-      </div>
+<div class="mc2-title"><p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jul 25–27, 2023 · National</p><h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin-bottom:10px;">Technoxian World Cup 2023</h2></div><div class="mc2-photo"><img alt="Technoxian 2023" onerror="this.onerror=null;this.src='https://placehold.co/400x300/110e1f/fbbf24?text=Technoxian+2023'" src="Achivements2025/Technoxian2023.jpg"/></div><div class="mc2-text">
 
-    </div><!-- /2023 -->
+
+<p style="font-size:0.85rem;color:rgba(200,195,232,0.7);margin-bottom:10px;">Competed in the Under 15kg Robowars category on the national stage.</p>
+<span class="medal medal-bronze">🥉 Robowars U15kg</span>
+</div>
+</div>
+<!-- Grid of text cards for 2023 -->
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;">
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Oct 20–21, 2023 · MIT Manipal</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECHTATVA'23</h2>
+<span class="medal medal-bronze">🥉 Robo Wars</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Oct 13–14, 2023 · NITK</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">ENGINEER'23</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-bronze">🥉 Robo Wars</span><span class="medal medal-gold">🥇 Line Follower</span><span class="medal medal-bronze">🥉 LFR</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Jun 22–23, 2023 · SIT Mukka</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECHYUVA'23</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Robo Soccer</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">May 19–20, 2023 · Yenepoya</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">YENSPLASH 2023</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Soccer</span><span class="medal medal-gold">🥇🥈 Race</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Apr 19, 2023 · Anna University</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">KURUKSHETRA 2023</h2>
+<span class="medal medal-silver">🥈 Robo Wars 15kg</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 31, 2023 · CEC</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">Aakriti 2023</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇 Soccer</span><span class="medal medal-gold">🥇 Race</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 28, 2023 · SIT Mangalore</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">ENVISION 2023</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇 Soccer</span><span class="medal medal-gold">🥇🥈 LFR</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 23–25, 2023 · SJEC</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TIARA 2023</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Soccer</span><span class="medal medal-gold">🥇🥈 LFR</span><span class="medal medal-silver">🥈 Race</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Mar 15–16, 2023 · MITE</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">SENTIA 2023</h2>
+<span class="medal medal-silver">🥈 Line Follower</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Feb 24–25, 2023 · VJTI Mumbai</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECHNOVANZA 2023</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-bronze">🥉 Robo Wars 15kg</span><span class="medal medal-bronze">🥉 Robo Sumo 15kg</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Apr 26–29, 2023 · NMAMIT</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">INCRIDEA 2023</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Robo Soccer</span></div>
+</div>
+</div>
+</div><!-- /2023 -->
 </div><!-- /theme-2023 -->
-
-    <!-- ═══ 2022 ═══ -->
-    <div class="year-divider"><span>2022</span><div class="line"></div></div>
-    <div class="section-orange" style="padding:28px 24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
-      <div class="ach-entry ach-text-card">
-        <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Dec 16–18, 2022 · IIT Bombay</p>
-        <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECHFEST 2022</h2>
-        <p style="font-size:0.82rem;color:rgba(200,195,232,0.6);">International Robowars participation.</p>
-      </div>
-      <div class="ach-entry ach-text-card">
-        <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Nov 11–12, 2022 · Sahyadri</p>
-        <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">AEROPHILIA 2022</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇 Robo Soccer</span><span class="medal medal-silver">🥈 Line Follower</span></div>
-      </div>
-      <div class="ach-entry ach-text-card">
-        <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Oct 21–23, 2022 · NIT Calicut</p>
-        <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TATHVA 2022</h2>
-        <span class="medal medal-gold">🥇 Line Follower</span>
-      </div>
-      <div class="ach-entry ach-text-card">
-        <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Sep 23–24, 2022 · NITK</p>
-        <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">ENGINEER 2022</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-silver">🥈 Robo Wars 45kg</span><span class="medal medal-bronze">🥉 Bot Hockey</span></div>
-      </div>
-      <div class="ach-entry ach-text-card">
-        <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Jul 9, 2022 · NIE Mysore</p>
-        <h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">ROBORIKISHI 2022</h2>
-        <div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Robo Wars 15kg</span><span class="medal medal-bronze">🥉 Robo Race</span></div>
-      </div>
-    </div>
+<!-- ═══ 2022 ═══ -->
+<div class="year-divider"><span>2022</span><div class="line"></div></div>
+<div class="section-orange" style="padding:28px 24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Dec 16–18, 2022 · IIT Bombay</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECHFEST 2022</h2>
+<p style="font-size:0.82rem;color:rgba(200,195,232,0.6);">International Robowars participation.</p>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Nov 11–12, 2022 · Sahyadri</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">AEROPHILIA 2022</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇 Robo Soccer</span><span class="medal medal-silver">🥈 Line Follower</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Oct 21–23, 2022 · NIT Calicut</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TATHVA 2022</h2>
+<span class="medal medal-gold">🥇 Line Follower</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Sep 23–24, 2022 · NITK</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">ENGINEER 2022</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-silver">🥈 Robo Wars 45kg</span><span class="medal medal-bronze">🥉 Bot Hockey</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">Jul 9, 2022 · NIE Mysore</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">ROBORIKISHI 2022</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Robo Wars 15kg</span><span class="medal medal-bronze">🥉 Robo Race</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">2022 · NMAM Institute of Technology, Nitte</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">INCRIDEA 2022</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-silver">🥈🥉 Robo Soccer</span><span class="medal medal-silver">🥈🥉 Robo Race</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">2022 · NMAM Institute of Technology, Nitte</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">OVERHAULIN' 2022</h2>
+<span class="medal medal-gold">🥇 Robo Sumo</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">2022 · Kumaraguru College of Technology, Coimbatore</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">YUGAM 2022</h2>
+<div style="display:flex;flex-wrap:wrap;gap:5px;"><span class="medal medal-gold">🥇🥈 Robo Wars</span><span class="medal medal-gold">🥇 Drone Hunt</span><span class="medal medal-silver">🥈 Robo Soccer</span><span class="medal medal-bronze">🥉 Line Follower</span></div>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">2022 · Canara Engineering College, Mangalore</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">AAKRITI 2022</h2>
+<span class="medal medal-silver">🥈 Robo Soccer</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">2022 · Canara Engineering College</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">AAKRITI 2022 — Tug of Bots</h2>
+<span class="medal medal-gold">🥇 Tug of Bots</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">2022 · Yenepoya Institute of Technology, Moodbidiri</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">YENSPLASH 2022</h2>
+<span class="medal medal-gold">🥇 Robo Wars</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">2022 · Christ University, Bangalore</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">MAGNOVITE 2022</h2>
+<span class="medal medal-bronze">🥉 Robo Wars</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">2022 · AJ Institute of Technology</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">AAKAR 2022</h2>
+<span class="medal medal-silver">🥈 Robo Soccer</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">2022 · Srinivas Institute of Technology, Mukka</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">TECH YUVA 2022</h2>
+<span class="medal medal-silver">🥈 Robo Sumo</span>
+</div>
+<div class="ach-entry ach-text-card">
+<p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:4px;">2022 · College of Engineering, Goa</p>
+<h2 style="font-family:'Inter',sans-serif;font-weight:800;font-size:0.95rem;color:#fff;margin-bottom:8px;">SPARX 2022</h2>
+<span class="medal medal-silver">🥈 Robo Race</span>
+</div>
+</div>
 </div><!-- /theme-2022 -->
-
-    <!-- Back button -->
-    <div style="text-align:center;margin-top:60px;">
-      <a href="index.html" class="btn-iris" style="background:linear-gradient(135deg,#f97316,#ea580c)!important;">← Back to Home</a>
-    </div>
-
-  </div>
+<!-- ═══ 2021 ═══ -->
+<div class="year-divider"><span>2021</span><div class="line"></div></div>
+<div class="section-blue" style="padding:24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(59,130,246,0.13) 0%, transparent 60%), #0a0f1e;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;">
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2021 · IIT Bombay</p>
+<h2>TECHFEST 2021</h2>
+<p class="plain-result">Qualified — Robo Wars 15kg</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2021 · College of Engineering, Pune</p>
+<h2>MINDSPARK 2021</h2>
+<p class="plain-result">Second Place — Robo Wars &amp; Robo Race</p>
+</div>
+</div>
+</div><!-- /theme-2021 -->
+<!-- ═══ 2020 ═══ -->
+<div class="year-divider"><span>2020</span><div class="line"></div></div>
+<div class="section-orange" style="padding:24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;">
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2020 · Canara Engineering College, Bejanapadavu</p>
+<h2>AAKRITI 2020</h2>
+<p class="plain-result">Second Place — Robo Soccer; First Place — Tug of Bots</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2020 · AJ Institute of Technology &amp; Engineering</p>
+<h2>AAKAR 2020</h2>
+<p class="plain-result">First Place — Robo Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2020 · NIT Goa</p>
+<h2>SAAVYAS 2020</h2>
+<p class="plain-result">Second Place — Robo Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2020 · Agnel Institute of Technology, Mapusa</p>
+<h2>TECHURJA 2020</h2>
+<p class="plain-result">First Place — Robo Wars</p>
+</div>
+</div>
+</div><!-- /theme-2020 -->
+<!-- ═══ 2019 ═══ -->
+<div class="year-divider"><span>2019</span><div class="line"></div></div>
+<div class="section-blue" style="padding:24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(59,130,246,0.13) 0%, transparent 60%), #0a0f1e;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;">
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · NIT Goa</p>
+<h2>SAAVYAS 2019</h2>
+<p class="plain-result">First Place — Robo Soccer; First &amp; Second — Robo Race</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · Agnel Institute of Technology &amp; Design, Goa</p>
+<h2>TECHURJA 2019</h2>
+<p class="plain-result">First Place — Robo Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · Amrita Vishwa Vidyapeetham, Bangalore</p>
+<h2>RACE 2019</h2>
+<p class="plain-result">First Place — Robo Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · NMAM Institute of Technology, Nitte</p>
+<h2>INCREDIA 2019</h2>
+<p class="plain-result">Second Place — Robo Race / Robo Wars</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · SMVITAM, Bantakal</p>
+<h2>VARNOTHSAVA 2019</h2>
+<p class="plain-result">First &amp; Second Place — Robo Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · Srinivas College of Engineering, Mangalore</p>
+<h2>TECHYUVA 2019</h2>
+<p class="plain-result">First Place — Death Race; First &amp; Second — Mini Wars</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · Alva's Institute of Engineering &amp; Technology</p>
+<h2>MECHXTORME 2019</h2>
+<p class="plain-result">First Place — Robo Wars / Robo Cars</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · AJ Institute of Technology</p>
+<h2>AAKAR 2019</h2>
+<p class="plain-result">Second Place — Robo Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · Canara College of Engineering</p>
+<h2>AAKRITI 2019</h2>
+<p class="plain-result">Third Place — Death Race</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · MITE, Moodbidri</p>
+<h2>SENTIA 2019</h2>
+<p class="plain-result">First &amp; Second Place</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · St. Joseph Institute of Technology</p>
+<h2>TIARA 2019</h2>
+<p class="plain-result">First Place — Robo Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · AISSMS College of Engineering, Pune</p>
+<h2>SILICON FUSION 2019</h2>
+<p class="plain-result">First Place — Robo Sumo</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · Sahyadri College of Engineering, Mangalore</p>
+<h2>AEROPHILIA 2019</h2>
+<p class="plain-result">First Place — Robo Sumo; Third — Robo Race</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · College of Engineering, Pune</p>
+<h2>MINDSPARK 2019</h2>
+<p class="plain-result">Third Place — Robo Race</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2019 · Manipal Institute of Technology</p>
+<h2>TECHTATVA 2019</h2>
+<p class="plain-result">First Place — Robo Wars</p>
+</div>
+</div>
+</div><!-- /theme-2019 -->
+<!-- ═══ 2018 ═══ -->
+<div class="year-divider"><span>2018</span><div class="line"></div></div>
+<div class="section-orange" style="padding:24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.12) 0%, transparent 60%), #0c0a16;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;">
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2018 · NMAM Institute of Technology, Nitte</p>
+<h2>INCRIDEA 2018</h2>
+<p class="plain-result">First Place — Robo Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2018 · Mangalore Institute of Technology, Moodabidri</p>
+<h2>SENTIA 2018</h2>
+<p class="plain-result">First Place — Robo Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2018 · Canara Engineering College</p>
+<h2>AAKRITI 2018</h2>
+<p class="plain-result">First Place — Robo Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2018 · SMVIT, Bantakal</p>
+<h2>VARNOTHSAVA 2018</h2>
+<p class="plain-result">Second Place — Bots on Lane</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2018 · MIT, Manipal</p>
+<h2>TECHTATVA 2018</h2>
+<p class="plain-result">First Place — Bot Futsal</p>
+</div>
+</div>
+</div><!-- /theme-2018 -->
+<!-- ═══ 2017 ═══ -->
+<div class="year-divider"><span>2017</span><div class="line"></div></div>
+<div class="section-blue" style="padding:24px;border-radius:20px;margin-bottom:10px;background:radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(59,130,246,0.13) 0%, transparent 60%), #0a0f1e;">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:10px;">
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2017 · SMVIT, Bantakal</p>
+<h2>VARNOTHSAVA 2017</h2>
+<p class="plain-result">Third Place — Bots on Lane</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2017 · Mangalore Institute of Technology, Moodabidri</p>
+<h2>SENTIA 2017</h2>
+<p class="plain-result">Second Place — Bot Soccer</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2017 · MIT, Manipal</p>
+<h2>TECHTATVA 2017</h2>
+<p class="plain-result">First Place — Hydrophilia &amp; Refuse to Sink</p>
+</div>
+<div class="ach-entry ach-plain-card">
+<p class="plain-date">2017 · NITK, Surathkal, Mangalore</p>
+<h2>ENGINEER 2017</h2>
+<p class="plain-result">First &amp; Second Place — Bot Hockey</p>
+</div>
+</div>
+</div><!-- /theme-2017 -->
+<!-- Back button -->
+<div style="text-align:center;margin-top:60px;">
+<a class="btn-iris" href="index.html" style="background:linear-gradient(135deg,#f97316,#ea580c)!important;">← Back to Home</a>
+</div>
+</div>
 </main>
-
 <!-- FOOTER -->
 <footer style="background:#080612;border-top:1.5px solid rgba(255,255,255,0.16);padding:36px 24px;text-align:center;">
-  <div class="iris-divider" style="margin-bottom:24px;"></div>
-  <p style="font-family:'Inter',sans-serif;font-weight:700;font-size:0.95rem;" class="grad-text">Robotics Club Nitte</p>
-  <p style="font-size:0.8rem;color:rgba(200,195,232,0.35);margin-top:8px;">NMAM Institute of Technology, Nitte</p>
-  <p style="font-size:0.75rem;color:rgba(200,195,232,0.25);margin-top:6px;">&copy; 2025 Robotics Club Nitte. All Rights Reserved.</p>
+<div class="iris-divider" style="margin-bottom:24px;"></div>
+<p class="grad-text" style="font-family:'Inter',sans-serif;font-weight:700;font-size:0.95rem;">Robotics Club Nitte</p>
+<p style="font-size:0.8rem;color:rgba(200,195,232,0.35);margin-top:8px;">NMAM Institute of Technology, Nitte</p>
+<p style="font-size:0.75rem;color:rgba(200,195,232,0.25);margin-top:6px;">© 2025 Robotics Club Nitte. All Rights Reserved.</p>
 </footer>
-
 <script>
 // Scroll animation for achievement entries
 const entries = document.querySelectorAll('.ach-entry');

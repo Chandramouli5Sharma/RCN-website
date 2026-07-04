@@ -386,13 +386,15 @@
 
       <!-- Featured wide card -->
       <article class="holo-card" style="grid-column:1/-1;padding:0;overflow:hidden;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;min-height:280px;">
-          <div style="overflow:hidden;">
-            <img src="Images/lfr workshop_2025.jpg" alt="Line Follower Workshop 2025" style="width:100%;height:100%;object-fit:cover;">
+        <div class="media-card">
+          <div class="mc-photo">
+            <img src="Images/lfr workshop_2025.jpg" alt="Line Follower Workshop 2025">
           </div>
-          <div style="padding:32px 28px;display:flex;flex-direction:column;justify-content:center;">
+          <div class="mc-title">
             <span class="role-badge" style="align-self:flex-start;margin-bottom:14px;">Workshop · Nov 2025</span>
-            <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.3rem;color:#fff;margin-bottom:12px;">Line Follower Workshop</h3>
+            <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.3rem;color:#fff;margin-bottom:0;">Line Follower Workshop</h3>
+          </div>
+          <div class="mc-text">
             <p style="font-size:0.9rem;line-height:1.7;color:rgba(200,195,232,0.75);">53 students navigated the full robotics development cycle — Fusion 360, soldering, assembly and coding — walking away with fully functional autonomous robots.</p>
           </div>
         </div>
@@ -430,19 +432,22 @@
 
     <!-- Zigzag: image left / right alternating -->
     <!-- Card 1: image left -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;margin-bottom:4px;border-radius:20px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.16);">
-      <div style="overflow:hidden;max-height:340px;">
-        <img src="Achivements2025/Techtatva25.JPG" alt="TECHTATVA 2025" style="width:100%;height:100%;object-fit:cover;object-position:top center;" onerror="this.onerror=null;this.src='https://placehold.co/600x400/110e1f/7c3aed?text=Techtatva+2025'">
+    <div class="media-card" style="border-radius:20px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.16);margin-bottom:4px;">
+      <div class="mc-photo" style="max-height:340px;">
+        <img src="Achivements2025/Techtatva25.JPG" alt="TECHTATVA 2025" style="object-position:top center;" onerror="this.onerror=null;this.src='https://placehold.co/600x400/110e1f/7c3aed?text=Techtatva+2025'">
       </div>
-      <div style="background:#1a1630;padding:36px 32px;display:flex;flex-direction:column;justify-content:center;">
+      <div class="mc-title" style="background:#1a1630;">
         <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#7c3aed;margin-bottom:10px;">Oct 2025 · MIT Manipal</span>
-        <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;margin-bottom:12px;">Dominant Victory at TECHTATVA 2025</h3>
+        <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;margin-bottom:0;">Dominant Victory at TECHTATVA 2025</h3>
+      </div>
+      <div class="mc-text" style="background:#1a1630;">
         <p style="font-size:0.88rem;line-height:1.7;color:rgba(200,195,232,0.7);margin-bottom:16px;">Swept top positions across Cadify, Maze Solver, Line Follower, Off-road Mayhem, and Water Rocket.</p>
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
-          <span class="medal medal-gold">🥇 Maze Solver</span>
-          <span class="medal medal-gold">🥇 Line Follower</span>
-          <span class="medal medal-gold">🥇 Robo Race</span>
           <span class="medal medal-silver">🥈 Cadify</span>
+          <span class="medal medal-gold">🥇🥈🥉 Maze Solver</span>
+          <span class="medal medal-gold">🥇🥈🥉 Line Follower</span>
+          <span class="medal medal-gold">🥇🥈🥉 Off-road Mayhem</span>
+          <span class="medal medal-gold">🥇🥈 Water Rocket</span>
         </div>
       </div>
     </div>
@@ -451,17 +456,19 @@
     <div style="height:3px;background:linear-gradient(90deg,transparent,rgba(255,60,172,0.3),rgba(124,58,237,0.3),transparent);margin:0 0 4px;"></div>
 
     <!-- Card 2: image right -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:20px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.16);">
-      <div style="background:#1a1630;padding:36px 32px;display:flex;flex-direction:column;justify-content:center;">
+    <div class="media-card media-card-reverse" style="border-radius:20px;overflow:hidden;border:1.5px solid rgba(255,255,255,0.16);">
+      <div class="mc-title" style="background:#1a1630;">
         <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#f97316;margin-bottom:10px;">Jul 2023 · National Level</span>
-        <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;margin-bottom:12px;">Technoxian World Cup 2023</h3>
+        <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.2rem;color:#fff;margin-bottom:0;">Technoxian World Cup 2023</h3>
+      </div>
+      <div class="mc-text" style="background:#1a1630;">
         <p style="font-size:0.88rem;line-height:1.7;color:rgba(200,195,232,0.7);margin-bottom:16px;">2nd runners-up in the Under 15kg Robowars category at one of India's most prestigious robotics championships.</p>
         <div style="display:flex;flex-wrap:wrap;gap:6px;">
           <span class="medal medal-bronze">🥉 Robowars U15kg</span>
         </div>
       </div>
-      <div style="overflow:hidden;max-height:280px;">
-        <img src="Achivements2025/Technoxian2023.jpg" alt="Technoxian 2023" style="width:100%;height:100%;object-fit:cover;" onerror="this.onerror=null;this.src='https://placehold.co/600x400/110e1f/f97316?text=Technoxian+2023'">
+      <div class="mc-photo" style="max-height:280px;">
+        <img src="Achivements2025/Technoxian2023.jpg" alt="Technoxian 2023" onerror="this.onerror=null;this.src='https://placehold.co/600x400/110e1f/f97316?text=Technoxian+2023'">
       </div>
     </div>
 
@@ -475,7 +482,8 @@
       <div class="holo-card" style="padding:20px;">
         <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Jan 2026 · Udupi</p>
         <h4 style="font-family:'Inter',sans-serif;font-weight:700;color:#fff;margin-bottom:8px;font-size:0.95rem;">Fastbit 2026</h4>
-        <span class="medal medal-gold">🥇 PCB Design</span>
+        <span class="medal medal-gold" style="margin-right:4px;">🥇 PCB Design</span>
+        <span class="medal medal-silver">🥈 Robo Soccer</span>
       </div>
       <div class="holo-card" style="padding:20px;">
         <p style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:#ff3cac;margin-bottom:6px;">Dec 2025 · SDIT</p>

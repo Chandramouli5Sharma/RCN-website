@@ -299,6 +299,32 @@ body::before {
   }
 }
 
+/* ── Media card: photo + text side by side on desktop, title→photo→text stacked on phone ── */
+.media-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "photo title" "photo text";
+  min-height: 280px;
+}
+.media-card.media-card-reverse {
+  grid-template-areas: "title photo" "text photo";
+}
+.media-card .mc-photo { grid-area: photo; overflow: hidden; }
+.media-card .mc-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.media-card .mc-title { grid-area: title; padding: 32px 32px 0; display: flex; flex-direction: column; justify-content: flex-end; }
+.media-card .mc-text { grid-area: text; padding: 0 32px 32px; }
+
+@media (max-width: 640px) {
+  .media-card, .media-card.media-card-reverse {
+    grid-template-columns: 1fr !important;
+    grid-template-areas: "title" "photo" "text" !important;
+    min-height: auto !important;
+  }
+  .media-card .mc-photo { min-height: 220px; }
+  .media-card .mc-title { padding: 22px 20px 14px; justify-content: flex-start; }
+  .media-card .mc-text { padding: 0 20px 22px; }
+}
+
 /* ── Alternating two-tone section theme (orange / blue) ── */
 .section-orange {
   --accent-border: rgba(249,115,22,0.85);

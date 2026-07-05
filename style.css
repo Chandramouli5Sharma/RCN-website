@@ -7,16 +7,16 @@
 
 :root {
   /* Core palette */
-  --void:        #0a0812;
-  --deep:        #110e1f;
-  --surface:     #1a1630;
+  --void:        #0a0a0d;
+  --deep:        #14151a;
+  --surface:     #1c1e24;
   --border:      rgba(255,255,255,0.16);
 
   /* Iridescent accent spectrum */
-  --iris-1:      #ff3cac;
+  --iris-1:      #d4a656;
   --iris-2:      #f97316;
   --iris-3:      #fbbf24;
-  --iris-4:      #7c3aed;
+  --iris-4:      #0d9488;
   --iris-5:      #06b6d4;
 
   /* Brand blue — used for the club name everywhere */
@@ -38,7 +38,7 @@
 body {
   font-family: var(--font-body);
   background-color: var(--void);
-  color: #c8c3e8;
+  color: #cacad2;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -75,7 +75,7 @@ body::before {
   position: absolute;
   width: 700px; height: 700px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(124,58,237,0.18) 0%, transparent 70%);
+  background: radial-gradient(ellipse, rgba(13,148,136,0.18) 0%, transparent 70%);
   top: -200px; right: -200px;
   pointer-events: none;
 }
@@ -119,9 +119,9 @@ body::before {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg,
-    rgba(255,60,172,0.06) 0%,
+    rgba(212,166,86,0.06) 0%,
     rgba(249,115,22,0.04) 40%,
-    rgba(124,58,237,0.06) 100%);
+    rgba(13,148,136,0.06) 100%);
   opacity: 0;
   transition: opacity 0.35s ease;
   pointer-events: none;
@@ -156,7 +156,7 @@ body::before {
   transition: box-shadow 0.3s ease;
 }
 .holo-card:hover .avatar-ring {
-  box-shadow: 0 0 20px rgba(255,60,172,0.35);
+  box-shadow: 0 0 20px rgba(212,166,86,0.35);
 }
 
 /* ── Achievement timeline card ── */
@@ -170,7 +170,7 @@ body::before {
 }
 .ach-card:hover {
   transform: translateX(6px);
-  box-shadow: -4px 0 24px rgba(255,60,172,0.2), 0 8px 40px rgba(0,0,0,0.4);
+  box-shadow: -4px 0 24px rgba(212,166,86,0.2), 0 8px 40px rgba(0,0,0,0.4);
 }
 
 /* ── Timeline dot ── */
@@ -178,7 +178,7 @@ body::before {
   width: 12px; height: 12px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--iris-1), var(--iris-2));
-  box-shadow: 0 0 8px rgba(255,60,172,0.6);
+  box-shadow: 0 0 8px rgba(212,166,86,0.6);
   flex-shrink: 0;
   margin-top: 6px;
 }
@@ -221,7 +221,7 @@ body::before {
 /* ── Nav link underline sweep ── */
 .nav-link {
   position: relative;
-  color: #c8c3e8;
+  color: #cacad2;
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -329,7 +329,7 @@ body::before {
 .section-orange {
   --accent-border: rgba(249,115,22,0.85);
   --accent-glow:   rgba(249,115,22,0.35);
-  --bg-shade:      #0c0a16;
+  --bg-shade:      #0c0a08;
   border-top: 3px solid rgba(249,115,22,0.55);
   border-bottom: 3px solid rgba(249,115,22,0.55);
   background-image: radial-gradient(ellipse 1200px 500px at 50% 0%, rgba(249,115,22,0.09) 0%, transparent 60%);

@@ -168,19 +168,19 @@
 
       <!-- WORKSHOP 1: KiCad Workshop (Latest) -->
       <article class="holo-card event-card" style="padding:0;border-radius:20px;overflow:hidden;border:1.8px solid rgba(249,115,22,0.55);background:#12151e;">
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));">
-          <!-- Left: Information & Details -->
-          <div style="padding:36px 32px;display:flex;flex-direction:column;justify-content:center;">
-            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;">
-              <span class="badge-tag badge-orange">★ Latest Workshop</span>
+        <div class="media-card" style="min-height:360px;">
+          <div class="mc-photo" style="background:#080a10;">
+            <img src="Images/kicad_workshop_group.jpg" alt="KiCad PCB Design Workshop 2026" style="object-fit:cover;width:100%;height:100%;">
+          </div>
+          <div class="mc-title" style="padding:32px 32px 12px;background:#12151e;">
+            <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+              <span class="badge-tag badge-orange">★ Latest Workshop · Aug 2026</span>
               <span class="badge-tag badge-blue">PCB Design &amp; EDA</span>
             </div>
-            
-            <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(1.4rem,2.8vw,1.8rem);color:#fff;margin-bottom:12px;line-height:1.25;">
+            <h3 style="font-family:'Inter',sans-serif;font-weight:800;font-size:clamp(1.4rem,2.8vw,1.8rem);color:#fff;margin-bottom:8px;">
               KiCad PCB Design Workshop
             </h3>
-
-            <div style="display:flex;flex-wrap:wrap;gap:18px;margin-bottom:20px;">
+            <div style="display:flex;flex-wrap:wrap;gap:18px;margin-top:6px;">
               <div class="meta-item">
                 <svg width="16" height="16" fill="none" stroke="#f97316" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
                 <span>August 22, 2026</span>
@@ -194,26 +194,29 @@
                 <span>NMAMIT Campus</span>
               </div>
             </div>
-
-            <p style="font-size:0.95rem;line-height:1.8;color:rgba(202,202,210,0.85);margin-bottom:20px;">
-              An intensive hands-on session introducing members to professional printed circuit board design using KiCad. Students mastered schematic creation, custom component footprints, netlist generation, ground planes, and dual-layer track routing ready for industrial fabrication.
-            </p>
-
-            <!-- Media notice / placeholder -->
-            <div style="background:rgba(249,115,22,0.08);border:1px dashed rgba(249,115,22,0.4);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:12px;">
-              <svg width="22" height="22" fill="none" stroke="#f97316" viewBox="0 0 24 24" style="flex-shrink:0;"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-              <span style="font-size:0.85rem;color:rgba(202,202,210,0.75);">Event photos and comprehensive circuit documentation will be added soon.</span>
-            </div>
           </div>
-
-          <!-- Right: Visual Graphic Card -->
-          <div style="background:linear-gradient(135deg,rgba(249,115,22,0.15) 0%,#0e111a 100%);padding:36px 32px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border-left:1.5px solid rgba(255,255,255,0.1);">
-            <div style="width:90px;height:90px;border-radius:24px;background:rgba(249,115,22,0.18);border:2px solid rgba(249,115,22,0.5);display:flex;align-items:center;justify-content:center;margin-bottom:20px;box-shadow:0 0 30px rgba(249,115,22,0.25);">
-              <svg width="44" height="44" fill="none" stroke="#f97316" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+          <div class="mc-text" style="padding:0 32px 32px;background:#12151e;">
+            <p style="font-size:0.95rem;line-height:1.8;color:rgba(202,202,210,0.8);margin-bottom:18px;">
+              An intensive hands-on session introducing members to professional printed circuit board design using KiCad. Students mastered schematic capture, custom footprint assignment, netlist generation, ground planes, design rule checking, and dual-layer track routing ready for industrial fabrication.
+            </p>
+            <!-- Workshop Photo Thumbnails -->
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px;margin-bottom:18px;">
+              <a href="gallery.html" style="border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.15);height:85px;display:block;transition:all 0.2s;" onmouseover="this.style.transform='scale(1.04)';this.style.borderColor='#f97316'" onmouseout="this.style.transform='scale(1)';this.style.borderColor='rgba(255,255,255,0.15)'">
+                <img src="Images/kicad_workshop_lab.jpg" alt="Hands-on Session" style="width:100%;height:100%;object-fit:cover;">
+              </a>
+              <a href="gallery.html" style="border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.15);height:85px;display:block;transition:all 0.2s;" onmouseover="this.style.transform='scale(1.04)';this.style.borderColor='#f97316'" onmouseout="this.style.transform='scale(1)';this.style.borderColor='rgba(255,255,255,0.15)'">
+                <img src="Images/kicad_workshop_instructor.jpg" alt="Schematic Lecture" style="width:100%;height:100%;object-fit:cover;">
+              </a>
+              <a href="gallery.html" style="border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.15);height:85px;display:block;transition:all 0.2s;" onmouseover="this.style.transform='scale(1.04)';this.style.borderColor='#f97316'" onmouseout="this.style.transform='scale(1)';this.style.borderColor='rgba(255,255,255,0.15)'">
+                <img src="Images/kicad_workshop_pcb.jpg" alt="PCB Track Routing" style="width:100%;height:100%;object-fit:cover;">
+              </a>
             </div>
-            <h4 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.1rem;color:#fff;margin-bottom:8px;">KiCad EDA Mastery</h4>
-            <p style="font-size:0.85rem;color:rgba(202,202,210,0.65);max-width:280px;line-height:1.6;margin-bottom:16px;">Schematic Capture &bull; Component Footprinting &bull; Design Rule Checks &bull; Gerber Export</p>
-            <span class="role-badge">31 Certified Participants</span>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <span class="role-badge" style="font-size:0.65rem;">Schematic Capture</span>
+              <span class="role-badge" style="font-size:0.65rem;">Custom Footprints</span>
+              <span class="role-badge" style="font-size:0.65rem;">Dual-Layer Routing</span>
+              <span class="role-badge" style="font-size:0.65rem;">DRC &amp; Gerber Export</span>
+            </div>
           </div>
         </div>
       </article>

@@ -43,17 +43,6 @@
     .gallery-card:hover img {
       transform: scale(1.06);
     }
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(8,9,13,0.95) 0%, rgba(8,9,13,0.35) 50%, transparent 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 16px;
-      opacity: 0.95;
-      transition: opacity 0.3s;
-    }
     .year-header-tag {
       display: inline-flex;
       align-items: center;
@@ -172,44 +161,49 @@
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-bottom:40px;">
 
+      <!-- KiCad Workshop Group -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/kicad_workshop_group.jpg', 'KiCad PCB Design Workshop', 'NMAMIT Campus · Aug 2026')">
+        <img src="Gallery/kicad_workshop_group.jpg" alt="KiCad PCB Design Workshop" loading="lazy">
+      </div>
+
+      <!-- KiCad Workshop Hands-on Lab -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/kicad_workshop_lab.jpg', 'KiCad Hands-on Lab Session', 'NMAMIT Campus · Aug 2026')">
+        <img src="Gallery/kicad_workshop_lab.jpg" alt="KiCad Hands-on Lab Session" loading="lazy">
+      </div>
+
+      <!-- KiCad Workshop Instructor Lecture -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/kicad_workshop_instructor.jpg', 'Schematic & Circuit Lecture', 'NMAMIT Campus · Aug 2026')">
+        <img src="Gallery/kicad_workshop_instructor.jpg" alt="Schematic & Circuit Lecture" loading="lazy">
+      </div>
+
+      <!-- KiCad Workshop PCB Design -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/kicad_workshop_pcb.jpg', 'Dual-Layer PCB Routing', 'NMAMIT Campus · Aug 2026')">
+        <img src="Gallery/kicad_workshop_pcb.jpg" alt="Dual-Layer PCB Routing" loading="lazy">
+      </div>
+
       <!-- Sentia 2026 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Sentia26.jpeg', 'Sentia 2026', 'MITE Campus')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Sentia26.jpeg', 'Sentia 2026', 'MITE Moodabidri · Mar 2026')">
         <img src="Gallery/Sentia26.jpeg" alt="Sentia 2026" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">Mar 2026</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Sentia 2026</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">MITE, Moodabidri</p>
-        </div>
       </div>
 
       <!-- Fastbit 2026 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Fastbit_26.jpeg', 'Fastbit 2026', 'Udupi')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Fastbit_26.jpeg', 'Fastbit 2026', 'Udupi · Jan 2026')">
         <img src="Gallery/Fastbit_26.jpeg" alt="Fastbit 2026" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">Jan 2026</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Fastbit 2026</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">Udupi</p>
-        </div>
       </div>
 
       <!-- Aakriti 2026 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Aakrti26.jpeg', 'Aakriti 2026', 'Canara Engineering College')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Aakrti26.jpeg', 'Aakriti 2026', 'Canara Engineering College · 2026')">
         <img src="Gallery/Aakrti26.jpeg" alt="Aakriti 2026" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2026</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Aakriti 2026</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">Canara Engineering College</p>
-        </div>
       </div>
 
       <!-- Aakar 2026 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Aj_aakar.jpeg', 'Aakar 2026', 'AJIET Mangalore')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Aj_aakar.jpeg', 'Aakar 2026', 'AJIET Mangalore · 2026')">
         <img src="Gallery/Aj_aakar.jpeg" alt="Aakar 2026" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2026</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Aakar 2026</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">AJIET, Mangalore</p>
-        </div>
+      </div>
+
+      <!-- Project Demonstration 2026 -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/IMG_20260304_153340718_HDR.jpg', '', '')">
+        <img src="Gallery/IMG_20260304_153340718_HDR.jpg" alt="Gallery Photo" loading="lazy">
       </div>
 
     </div>
@@ -222,73 +216,93 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-bottom:40px;">
 
       <!-- Sambhram 2025 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Sambhram25.jpeg', 'Sambhram 2025', 'SDIT Mangalore')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Sambhram25.jpeg', 'Sambhram 2025', 'SDIT Mangalore · Dec 2025')">
         <img src="Gallery/Sambhram25.jpeg" alt="Sambhram 2025" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">Dec 2025</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Sambhram 2025</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">SDIT, Mangalore</p>
-        </div>
       </div>
 
       <!-- Tiara 2025 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Tiara2025.jpg', 'Tiara 2025', 'SJEC Vamanjoor')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Tiara2025.jpg', 'Tiara 2025', 'SJEC Vamanjoor · Nov 2025')">
         <img src="Gallery/Tiara2025.jpg" alt="Tiara 2025" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">Nov 2025</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Tiara 2025</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">SJEC, Vamanjoor</p>
-        </div>
+      </div>
+
+      <!-- Combat Arena Testing 2025 -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/IMG_6657.jpg', '', '')">
+        <img src="Gallery/IMG_6657.jpg" alt="Gallery Photo" loading="lazy">
+      </div>
+
+      <!-- Arena Match 2025 -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/IMG-20251107-WA0009.jpg', '', '')">
+        <img src="Gallery/IMG-20251107-WA0009.jpg" alt="Gallery Photo" loading="lazy">
+      </div>
+
+      <!-- NITK Incident Winnings 2025 -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/nitk 2025 winnings.jpg', 'Engineer 2025 Winners & Podiums', 'NITK Surathkal · Oct 2025')">
+        <img src="Gallery/nitk 2025 winnings.jpg" alt="Engineer 2025 Winners & Podiums" loading="lazy">
       </div>
 
       <!-- Engineer 2025 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Engineer2025.jpg', 'Engineer 2025', 'NITK Surathkal')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Engineer2025.jpg', 'Engineer 2025', 'NITK Surathkal · Oct 2025')">
         <img src="Gallery/Engineer2025.jpg" alt="Engineer 2025" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">Oct 2025</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Engineer 2025</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">NITK Surathkal</p>
-        </div>
+      </div>
+
+      <!-- Engineer 2025 Arena -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/IMG-20251018-WA0007.jpg', '', '')">
+        <img src="Gallery/IMG-20251018-WA0007.jpg" alt="Gallery Photo" loading="lazy">
+      </div>
+
+      <!-- Autonomous Track Run -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/IMG-20251018-WA0002.jpg', '', '')">
+        <img src="Gallery/IMG-20251018-WA0002.jpg" alt="Gallery Photo" loading="lazy">
       </div>
 
       <!-- Techtatva 2025 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Techtatva25.JPG', 'Techtatva 2025', 'MIT Manipal')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Techtatva25.JPG', 'Techtatva 2025', 'MIT Manipal · Oct 2025')">
         <img src="Gallery/Techtatva25.JPG" alt="Techtatva 2025" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">Oct 2025</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Techtatva 2025</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">MIT Manipal</p>
-        </div>
+      </div>
+
+      <!-- LFR Autonomous Fleet -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/lfr bots.jpg', '', '')">
+        <img src="Gallery/lfr bots.jpg" alt="Gallery Photo" loading="lazy">
+      </div>
+
+      <!-- Bot Assembly & Calibration -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/IMG-20251016-WA0034.jpg', '', '')">
+        <img src="Gallery/IMG-20251016-WA0034.jpg" alt="Gallery Photo" loading="lazy">
       </div>
 
       <!-- LFR Workshop 2025 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/lfr workshop_2025.jpg', 'LFR Robotics Workshop', 'NMAMIT Campus')">
-        <img src="Gallery/lfr workshop_2025.jpg" alt="LFR Workshop" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge-blue" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">Workshop</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">LFR Robotics Workshop</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">NMAMIT Campus</p>
-        </div>
+      <div class="gallery-card" onclick="openLightbox('Gallery/lfr workshop_2025.jpg', 'Line Follower Robot Workshop', 'NMAMIT Campus · Nov 2025')">
+        <img src="Gallery/lfr workshop_2025.jpg" alt="Line Follower Robot Workshop" loading="lazy">
+      </div>
+
+      <!-- Club Orientation & Demo -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/IMG-20250808-WA0020.jpg', '', '')">
+        <img src="Gallery/IMG-20250808-WA0020.jpg" alt="Gallery Photo" loading="lazy">
+      </div>
+
+      <!-- Hardware Circuit Prototyping -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/IMG-20250722-WA0015.jpg', '', '')">
+        <img src="Gallery/IMG-20250722-WA0015.jpg" alt="Gallery Photo" loading="lazy">
+      </div>
+
+      <!-- Chassis Fabrication & Testing -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/IMG-20250713-WA0012.jpg', '', '')">
+        <img src="Gallery/IMG-20250713-WA0012.jpg" alt="Gallery Photo" loading="lazy">
       </div>
 
       <!-- Synergia 2025 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Synergia2025.jpg', 'Synergia 2025', 'St Joseph Engineering College')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Synergia2025.jpg', 'Synergia 2025', 'St Joseph Engineering College · 2025')">
         <img src="Gallery/Synergia2025.jpg" alt="Synergia 2025" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2025</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Synergia 2025</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">St Joseph Engineering College</p>
-        </div>
       </div>
 
       <!-- Yensplash 2025 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Yensplash2025.jpg', 'Yensplash 2025', 'Yenepoya Institute of Technology')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Yensplash2025.jpg', 'Yensplash 2025', 'Yenepoya Institute of Technology · 2025')">
         <img src="Gallery/Yensplash2025.jpg" alt="Yensplash 2025" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2025</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Yensplash 2025</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">Yenepoya Institute of Technology</p>
-        </div>
+      </div>
+
+      <!-- Robotics Club Nitte Showcase -->
+      <div class="gallery-card" onclick="openLightbox('Gallery/rcn.jpg', '', '')">
+        <img src="Gallery/rcn.jpg" alt="Gallery Photo" loading="lazy">
       </div>
 
     </div>
@@ -301,43 +315,23 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-bottom:40px;">
 
       <!-- Sambhram 2024 Main -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Sambhram2024.jpg', 'Sambhram 2024', 'SDIT Mangalore')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Sambhram2024.jpg', 'Sambhram 2024', 'SDIT Mangalore · 2024')">
         <img src="Gallery/Sambhram2024.jpg" alt="Sambhram 2024" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2024</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Sambhram 2024</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">SDIT, Mangalore</p>
-        </div>
       </div>
 
       <!-- Technovanza 2024 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Technovanza2024.jpg', 'Technovanza 2024', 'VJTI Mumbai')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Technovanza2024.jpg', 'Technovanza 2024', 'VJTI Mumbai · 2024')">
         <img src="Gallery/Technovanza2024.jpg" alt="Technovanza 2024" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2024</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Technovanza 2024</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">VJTI Mumbai</p>
-        </div>
       </div>
 
       <!-- Quantum 2024 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Quantum2024.jpg', 'Quantum 2024', 'NMAMIT Campus')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Quantum2024.jpg', 'Quantum 2024', 'NMAMIT Campus · 2024')">
         <img src="Gallery/Quantum2024.jpg" alt="Quantum 2024" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2024</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Quantum 2024</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">NMAMIT Campus</p>
-        </div>
       </div>
 
       <!-- Sambhram 2024 Arena -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Sambhram24.jpeg', 'Sambhram 2024 Arena', 'SDIT Mangalore')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Sambhram24.jpeg', 'Sambhram 2024 Arena', 'SDIT Mangalore · 2024')">
         <img src="Gallery/Sambhram24.jpeg" alt="Sambhram 2024 Arena" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2024</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Sambhram 2024 Arena</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">SDIT, Mangalore</p>
-        </div>
       </div>
 
     </div>
@@ -350,123 +344,63 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-bottom:40px;">
 
       <!-- Aerophilia 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Aerophilia2023.jpg', 'Aerophilia 2023', 'Sahyadri College')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Aerophilia2023.jpg', 'Aerophilia 2023', 'Sahyadri College · 2023')">
         <img src="Gallery/Aerophilia2023.jpg" alt="Aerophilia 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Aerophilia 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">Sahyadri College, Mangalore</p>
-        </div>
       </div>
 
       <!-- Technoxian World Cup 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Technoxian2023.jpg', 'Technoxian World Cup 2023', 'New Delhi')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Technoxian2023.jpg', 'Technoxian World Cup 2023', 'New Delhi · 2023')">
         <img src="Gallery/Technoxian2023.jpg" alt="Technoxian World Cup 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">Jul 2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Technoxian World Cup 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">New Delhi</p>
-        </div>
       </div>
 
       <!-- Sentia 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Sentia2023.JPG', 'Sentia 2023', 'MITE Moodabidri')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Sentia2023.JPG', 'Sentia 2023', 'MITE Moodabidri · 2023')">
         <img src="Gallery/Sentia2023.JPG" alt="Sentia 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Sentia 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">MITE, Moodabidri</p>
-        </div>
       </div>
 
       <!-- Tiara 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/tiara23.png', 'Tiara 2023', 'SJEC Vamanjoor')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/tiara23.png', 'Tiara 2023', 'SJEC Vamanjoor · 2023')">
         <img src="Gallery/tiara23.png" alt="Tiara 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Tiara 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">SJEC, Vamanjoor</p>
-        </div>
       </div>
 
       <!-- Aakriti 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Aakriti2023.png', 'Aakriti 2023', 'Canara Engineering College')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Aakriti2023.png', 'Aakriti 2023', 'Canara Engineering College · 2023')">
         <img src="Gallery/Aakriti2023.png" alt="Aakriti 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Aakriti 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">Canara Engineering College</p>
-        </div>
       </div>
 
       <!-- Incredia 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Incredia2023.png', 'Incredia 2023', 'NMAMIT Campus')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Incredia2023.png', 'Incredia 2023', 'NMAMIT Campus · 2023')">
         <img src="Gallery/Incredia2023.png" alt="Incredia 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Incredia 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">NMAMIT Campus</p>
-        </div>
       </div>
 
       <!-- Envision 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/ENVISION2023.png', 'Envision 2023', 'Srinivas Institute')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/ENVISION2023.png', 'Envision 2023', 'Srinivas Institute · 2023')">
         <img src="Gallery/ENVISION2023.png" alt="Envision 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Envision 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">Srinivas Institute of Technology</p>
-        </div>
       </div>
 
       <!-- Engineer 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Engineer2023.png', 'Engineer 2023', 'NITK Surathkal')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Engineer2023.png', 'Engineer 2023', 'NITK Surathkal · 2023')">
         <img src="Gallery/Engineer2023.png" alt="Engineer 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Engineer 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">NITK Surathkal</p>
-        </div>
       </div>
 
       <!-- Kurukshetra 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/KURUKSHETRA2023.png', 'Kurukshetra 2023', 'CEG Anna University Chennai')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/KURUKSHETRA2023.png', 'Kurukshetra 2023', 'CEG Anna University Chennai · 2023')">
         <img src="Gallery/KURUKSHETRA2023.png" alt="Kurukshetra 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Kurukshetra 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">CEG, Anna University Chennai</p>
-        </div>
       </div>
 
       <!-- Technovanza 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/TECHNOVANZA2023.png', 'Technovanza 2023', 'VJTI Mumbai')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/TECHNOVANZA2023.png', 'Technovanza 2023', 'VJTI Mumbai · 2023')">
         <img src="Gallery/TECHNOVANZA2023.png" alt="Technovanza 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Technovanza 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">VJTI Mumbai</p>
-        </div>
       </div>
 
       <!-- Techyuva 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Techyuva2023.png', 'Techyuva 2023', 'Srinivas University')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Techyuva2023.png', 'Techyuva 2023', 'Srinivas University · 2023')">
         <img src="Gallery/Techyuva2023.png" alt="Techyuva 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Techyuva 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">Srinivas University</p>
-        </div>
       </div>
 
       <!-- Yensplash 2023 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Yensplash2023.png', 'Yensplash 2023', 'Yenepoya Institute of Technology')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Yensplash2023.png', 'Yensplash 2023', 'Yenepoya Institute of Technology · 2023')">
         <img src="Gallery/Yensplash2023.png" alt="Yensplash 2023" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2023</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Yensplash 2023</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">Yenepoya Institute of Technology</p>
-        </div>
       </div>
 
     </div>
@@ -479,53 +413,28 @@
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:24px;margin-bottom:40px;">
 
       <!-- Aerophilia 2022 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Aerophilia2022.png', 'Aerophilia 2022', 'Sahyadri College')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Aerophilia2022.png', 'Aerophilia 2022', 'Sahyadri College · 2022')">
         <img src="Gallery/Aerophilia2022.png" alt="Aerophilia 2022" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2022</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Aerophilia 2022</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">Sahyadri College, Mangalore</p>
-        </div>
       </div>
 
       <!-- Engineer 2022 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Engineer2022.png', 'Engineer 2022', 'NITK Surathkal')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Engineer2022.png', 'Engineer 2022', 'NITK Surathkal · 2022')">
         <img src="Gallery/Engineer2022.png" alt="Engineer 2022" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2022</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Engineer 2022</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">NITK Surathkal</p>
-        </div>
       </div>
 
       <!-- Roborikishi 2022 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Roborikishi2022.png', 'Roborikishi 2022', 'NMAMIT Campus')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Roborikishi2022.png', 'Roborikishi 2022', 'NMAMIT Campus · 2022')">
         <img src="Gallery/Roborikishi2022.png" alt="Roborikishi 2022" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2022</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Roborikishi 2022</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">NMAMIT Campus</p>
-        </div>
       </div>
 
       <!-- Tathva 2022 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Tathva2022.png', 'Tathva 2022', 'NIT Calicut')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Tathva2022.png', 'Tathva 2022', 'NIT Calicut · 2022')">
         <img src="Gallery/Tathva2022.png" alt="Tathva 2022" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2022</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Tathva 2022</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">NIT Calicut</p>
-        </div>
       </div>
 
       <!-- Techfest 2022 -->
-      <div class="gallery-card" onclick="openLightbox('Gallery/Techfest2022.png', 'Techfest 2022', 'IIT Bombay')">
+      <div class="gallery-card" onclick="openLightbox('Gallery/Techfest2022.png', 'Techfest 2022', 'IIT Bombay · 2022')">
         <img src="Gallery/Techfest2022.png" alt="Techfest 2022" loading="lazy">
-        <div class="gallery-overlay">
-          <span class="role-badge" style="font-size:0.6rem;align-self:flex-start;margin-bottom:6px;">2022</span>
-          <h3 style="font-family:'Inter',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin:0;">Techfest 2022</h3>
-          <p style="font-size:0.78rem;color:rgba(202,202,210,0.8);margin:4px 0 0;">IIT Bombay</p>
-        </div>
       </div>
 
     </div>
@@ -552,7 +461,7 @@
       <img id="lightbox-img" src="" alt="Full view" style="width:100%;max-height:75vh;object-fit:contain;display:block;margin:0 auto;">
     </div>
     <!-- Caption Box -->
-    <div style="margin-top:16px;background:rgba(18,21,30,0.9);border:1px solid rgba(255,255,255,0.12);padding:14px 20px;border-radius:12px;text-align:left;">
+    <div id="lightbox-caption-box" style="margin-top:16px;background:rgba(18,21,30,0.9);border:1px solid rgba(255,255,255,0.12);padding:14px 20px;border-radius:12px;text-align:left;">
       <h4 id="lightbox-title" style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.15rem;color:#fff;margin:0 0 4px;"></h4>
       <p id="lightbox-desc" style="font-size:0.88rem;color:rgba(202,202,210,0.8);margin:0;"></p>
     </div>
@@ -602,12 +511,20 @@
   function openLightbox(src, title, desc) {
     const modal = document.getElementById('lightbox');
     const img   = document.getElementById('lightbox-img');
+    const capBox = document.getElementById('lightbox-caption-box');
     const tEl   = document.getElementById('lightbox-title');
     const dEl   = document.getElementById('lightbox-desc');
     
     img.src = src;
-    tEl.textContent = title;
-    dEl.textContent = desc;
+    if (title || desc) {
+      tEl.textContent = title || '';
+      dEl.textContent = desc || '';
+      tEl.style.display = title ? 'block' : 'none';
+      dEl.style.display = desc ? 'block' : 'none';
+      capBox.style.display = 'block';
+    } else {
+      capBox.style.display = 'none';
+    }
 
     modal.style.display = 'flex';
     setTimeout(() => { modal.style.opacity = '1'; }, 10);
